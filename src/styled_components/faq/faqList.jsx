@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 //Data
-import FaqData from "./faqList.json";
+import FaqData from "./faqData.json";
 
 //Components
 import Title from "../reusable/title";

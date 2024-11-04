@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 //Icon
-import ArrowActive from "../../assets/icons/arrow-active.svg";
-import ArrowInactive from "../../assets/icons/arrow-inactive.svg";
+import ArrowActive from "../../assets/icons/active-arrow.png";
+import ArrowInactive from "../../assets/icons/inactive-arrow.png";
 
 //Styled Components
 const FaqWrapper = styled.div`

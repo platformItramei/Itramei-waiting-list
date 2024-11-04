@@ -7,6 +7,7 @@ import HeroSection from "./pages/HeroSection";
 import Navbar from "./components/Navbar";
 import WaitingListForm from "./styled_components/form/container";
 import FaqList from "./styled_components/faq/faqList.jsx";
+import Footer from "./styled_components/footer/footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <WhyJoinWaitlist />
       <WaitingListForm />
       <FaqList />
+      <Footer />
     </div>
   );
 }
