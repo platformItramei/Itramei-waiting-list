@@ -6,6 +6,7 @@ import WhyJoinWaitlist from "./pages/WhyJoinWaitlist";
 import HeroSection from "./pages/HeroSection";
 import Navbar from "./components/Navbar";
 import WaitingListForm from "./styled_components/form/container";
+import FaqList from "./styled_components/faq/faqList.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <ItrameiBenefits />
       <WhyJoinWaitlist />
       <WaitingListForm />
+      <FaqList />
     </div>
   );
 }

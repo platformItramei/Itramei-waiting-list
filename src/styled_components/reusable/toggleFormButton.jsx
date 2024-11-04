@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 
 const ToggleContainer = styled.div`
   width: 100%;
-  max-width: 666px;
   height: 48px;
   display: flex;
   align-items: center;
