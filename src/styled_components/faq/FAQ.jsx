@@ -51,6 +51,7 @@ const AnswerContainer = styled.div`
   border-radius: 0 0 8px 8px;
   overflow: hidden;
   padding: 24px;
+  cursor: default;
 `;
 
 const Text = styled.p`
