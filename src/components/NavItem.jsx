@@ -1,10 +1,15 @@
 import React from 'react';
 
-const NavItem = ({ text }) => {
+const NavItem = ({ text, href = '#' }) => {
   return (
-    <div className="text-white font-semibold text-lg leading-tight font-['Plus_Jakarta_Sans']">
+    <a
+      href={href}
+      className="text-white font-semibold text-lg leading-tight "
+      style={{ fontFamily: 'Plus Jakarta Sans' }}
+
+    >
       {text}
-    </div>
+    </a>
   );
 };
 

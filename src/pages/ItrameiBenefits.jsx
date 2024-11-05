@@ -3,44 +3,39 @@ import scale from '../assets/icons/BussinessIcon1.png';
 import excel from '../assets/icons/BussinessIcon2.png';
 import empower from '../assets/icons/BussinessIcon3.png';
 import BenefitCard from '../components/BenefitCard';
+import increase from '../assets/icons/Individual1.png';
+import strength from '../assets/icons/Individual2.png'
+import boost from '../assets/icons/Individual3.png'
+
 
 const ItrameiBenefits = () => {
   const [activeTab, setActiveTab] = useState("business");
 
   return (
-    <div
-      className="w-full mx-auto bg-[#0D4459] space-y-10"
-      style={{
-        height: 'auto',
-        padding: '80px 0px 0px 0px',
-        gap: '40px',
-        opacity: '1',
-      }}
-    >
+    <div className="w-full mx-auto bg-[#0D4459] py-20 px-4 md:px-10 overflow-x-hidden">
       {/* Heading */}
       <h2
-        className="text-center font-bold"
-        style={{
-          fontSize: '34px',
-          lineHeight: '38.05px',
-          letterSpacing: '-0.03em',
-          fontFamily: 'Sansation, sans-serif',
-          color: '#FFFFFF',
-        }}
+        className="text-center font-bold text-2xl md:text-4xl text-white mb-8"
+        style={{ fontFamily: 'Sansation, sans-serif' }}
       >
         How Itramei Benefits You
       </h2>
 
       {/* Toggle Buttons */}
-      <div className="flex justify-center mt-6">
-        <div className="flex bg-[#105873] rounded-lg p-1">
+      <div className="flex justify-center mb-8">
+        <div className="flex bg-[#105873] rounded-lg overflow-hidden">
           <button
             onClick={() => setActiveTab("business")}
-            className={`w-[238px] h-[40px] font-semibold px-6 py-3 rounded-lg ${
-              activeTab === "business" ? "bg-[#24C3FF] text-white" : "text-gray-300"
+            className={`font-semibold ${
+              activeTab === "business"
+                ? "bg-[#24C3FF] text-white"
+                : "text-gray-300"
             }`}
             style={{
               fontFamily: 'Sansation, sans-serif',
+              width: '200px', // Increased width
+              height: '36px', // Reduced height
+              padding: '4px 8px',
               borderRadius: activeTab === "business" ? '8px' : '8px 0 0 8px',
             }}
           >
@@ -48,11 +43,16 @@ const ItrameiBenefits = () => {
           </button>
           <button
             onClick={() => setActiveTab("individual")}
-            className={`w-[238px] h-[40px] font-semibold px-6 py-3 rounded-lg ${
-              activeTab === "individual" ? "bg-[#24C3FF] text-white" : "text-gray-300"
+            className={`font-semibold ${
+              activeTab === "individual"
+                ? "bg-[#24C3FF] text-white"
+                : "text-gray-300"
             }`}
             style={{
               fontFamily: 'Sansation, sans-serif',
+              width: '200px', // Increased width
+              height: '36px', // Reduced height
+              padding: '4px 8px',
               borderRadius: activeTab === "individual" ? '8px' : '0 8px 8px 0',
             }}
           >
@@ -62,7 +62,7 @@ const ItrameiBenefits = () => {
       </div>
 
       {/* Benefits Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {activeTab === "business" ? (
           <>
             <BenefitCard
@@ -71,7 +71,7 @@ const ItrameiBenefits = () => {
               altText="Excel Icon"
             />
             <BenefitCard
-              icon={empower}
+              icon={strength}
               text="Empower your hiring of young talent without compromising quality."
               altText="Empower Icon"
             />
@@ -85,45 +85,33 @@ const ItrameiBenefits = () => {
           <>
             {/* Individual benefits */}
             <BenefitCard
-              icon={scale}
-              text="Personal growth through effective communication."
-              altText="Growth Icon"
+              icon={increase}
+              text="Increase confidence in social interactions"
+              altText="Increase Icon"
             />
             <BenefitCard
-              icon={empower}
-              text="Build confidence in public speaking and presentations."
-              altText="Confidence Icon"
+              icon={strength}
+              text="Strengthening of interpersonal relationships."
+              altText="Strength Icon"
             />
             <BenefitCard
-              icon={excel}
-              text="Enhance interpersonal relationships at work and in life."
-              altText="Interpersonal Icon"
+              icon={boost}
+              text="Boost career growth."
+              altText="Boost Icon"
             />
           </>
         )}
       </div>
 
       {/* Register Button */}
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-10">
         <button
-          className="text-white font-semibold text-lg flex items-center justify-center"
-          style={{
-            width: '350px',
-            height: '48px',
-            padding: '20px 24px',
-            gap: '10px',
-            borderRadius: '8px',
-            backgroundColor: '#FFFFFF1A',
-            border: '1px solid #BDC2C7',
-            opacity: '1',
-          }}
+          className="text-white font-semibold text-base md:text-lg px-6 py-3 rounded-lg bg-white bg-opacity-10 border border-gray-400"
+          style={{ fontFamily: 'Sansation, sans-serif' }}
         >
           Register for Exclusive Invitation
         </button>
       </div>
-      <br />
-      <br />
-      <br />
     </div>
   );
 };

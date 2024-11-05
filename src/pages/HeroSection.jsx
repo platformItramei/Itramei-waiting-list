@@ -16,10 +16,12 @@ const HeroSection = () => {
 
       {/* Overlay Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-50">
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight font-['Sansation'] max-w-[850px]">
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight font-['Sansation'] max-w-[850px]" >
           YOUR MESSAGE, PERFECTLY UNDERSTOOD
         </h1>
-        <p className="mt-4 text-lg md:text-xl font-medium leading-8 font-['Plus_Jakarta_Sans'] text-gray-300 max-w-[785px]">
+        <p className="mt-4 text-lg md:text-xl font-medium leading-8 text-gray-300 max-w-[785px]"
+                      style={{ fontFamily: 'Plus Jakarta Sans' }}
+>
           Unlock your potential with Itramei, the platform to enhance your communication skills for
           lasting impact at work and in life.
         </p>

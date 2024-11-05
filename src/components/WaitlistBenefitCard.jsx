@@ -1,20 +1,18 @@
 import React from 'react';
-import tick from '../assets/icons/tick.png'; // Ensure the correct path to tick icon
+import tick from '../assets/icons/tick.png'; 
 
 const WaitlistBenefitCard = ({ text }) => {
   return (
     <div
-      className="flex items-center bg-white p-4 border border-[#24C3FF] rounded-tl-lg shadow-md"
+      className="flex items-center bg-white p-4 md:p-6 shadow-md w-full max-w-lg mx-4"
       style={{
-        width: '604px',
-        height: '72px',
-        padding: '24px 16px',
-        borderRadius: '8px 0px 0px 0px',
+        border: '1px solid #24C3FF',
+        borderRadius: '8px', // Adjust as needed
       }}
     >
-      <img src={tick} alt="Tick" className="w-6 h-6 mr-4" />
+      <img src={tick} alt="Tick" className="w-6 h-6 mr-4 flex-shrink-0" />
       <p
-        className="text-[#1F2C38] text-[20px] font-medium leading-6"
+        className="text-secondary text-base md:text-lg font-medium leading-6 font-plus-jakarta-sans"
         style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}
       >
         {text}
