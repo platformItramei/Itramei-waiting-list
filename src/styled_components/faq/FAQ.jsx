@@ -20,10 +20,14 @@ const FaqWrapper = styled.div`
   ${({ $open }) =>
     $open &&
     css`
-      max-height: 400px;
+      max-height: 800px;
     `}
 
   transition: all 1s ease;
+
+  @media screen and (max-width: 768px) {
+    max-height: 1000px;
+  }
 `;
 
 const Icon = styled.img`
@@ -43,15 +47,29 @@ const QuestionContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px 30px;
+
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 const AnswerContainer = styled.div`
   background-color: rgba(222, 246, 255, 1);
   width: 100%;
   border-radius: 0 0 8px 8px;
-  overflow: hidden;
   padding: 24px;
   cursor: default;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+
+    ${({ $open }) =>
+      $open &&
+      css`
+        display: flex;
+        height: 100%;
+      `}
+  }
 `;
 
 const Text = styled.p`

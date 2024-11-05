@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 
 const ToggleContainer = styled.div`
@@ -30,6 +30,10 @@ const Button = styled.button`
     css`
       color: white;
     `}
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const ActiveBackground = styled.div`

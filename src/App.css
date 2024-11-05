@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   background-color: #f5f5f5;
 }
 
@@ -23,9 +24,8 @@ body {
 
 .text-section h1 {
   font-size: 28px;
-  color: #293A4B;
+  color: #293a4b;
   margin: 0;
-
 }
 
 .text-section p {

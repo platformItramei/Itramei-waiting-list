@@ -15,6 +15,10 @@ const Container = styled.div`
   align-items: center;
   gap: 24px;
   padding: 80px 20px;
+
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 export default function FaqList() {

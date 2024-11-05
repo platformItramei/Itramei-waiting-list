@@ -7,12 +7,22 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   gap: 70px;
   color: white;
+
+  @media screen and (max-width: 1000px) {
+    padding: 40px 10px;
+    flex: reverse;
+    gap: 24px;
+  }
 `;
 
 export const Row = styled.div`
   display: flex;
   align-items: end;
   justify-content: space-between;
+
+  @media screen and (max-width: 1000px) {
+    display: grid;
+  }
 `;
 
 //Contact
@@ -21,12 +31,22 @@ export const FooterTitle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media screen and (max-width: 1000px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const EmailList = styled.div`
   display: flex;
   align-items: center;
   gap: 40px;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    text-decoration: underline;
+  }
 `;
 
 export const Text = styled.p`
@@ -37,10 +57,25 @@ export const Text = styled.p`
       font-size: 32px;
       font-weight: 700;
     `}
+
+  @media screen and (max-width: 1000px) {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+
+    ${({ $title }) =>
+      $title &&
+      css`
+        font-size: 32px;
+        font-weight: 700;
+      `}
+  }
 `;
 
 export const Mail = styled.img`
   transform: translateX(35px);
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 `;
 //Logo
 
@@ -49,6 +84,11 @@ export const Logo = styled.img`
   left: 0;
   width: 119px;
   height: 53px;
+
+  @media screen and (max-width: 1000px) {
+    position: relative;
+    transform: translateY(-15px);
+  }
 `;
 
 export const LinkList = styled.div`
@@ -57,6 +97,12 @@ export const LinkList = styled.div`
   align-items: center;
   justify-content: center;
   gap: 24px;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
 `;
 
 export const Link = styled.a`
@@ -75,9 +121,17 @@ export const Copyright = styled.div`
   align-items: center;
   justify-content: center;
   gap: 4px;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 12px;
+  }
 `;
 
 export const Name = styled.span`
   color: rgba(27, 146, 191, 1);
   font-weight: 600;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 12px;
+  }
 `;

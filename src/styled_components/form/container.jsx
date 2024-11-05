@@ -13,6 +13,10 @@ const PageContainer = styled.div`
   justify-content: center;
   gap: 48px;
   padding: 80px 20px;
+
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 export default function WaitingListForm() {

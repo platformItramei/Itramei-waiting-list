@@ -6,6 +6,15 @@ const Container = styled.div`
   align-items: center;
   font-size: 40px;
   line-height: 44px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+    line-height: 27px;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 22px;
+  }
 `;
 
 const Text = styled.p`
@@ -15,6 +24,10 @@ const Text = styled.p`
   gap: 12px;
   font-weight: 700;
   letter-spacing: -2%;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const BlueTitle = styled.span`

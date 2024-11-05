@@ -1,4 +1,5 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 
 // Images / Icon
 import LogoIcon from "../../assets/icons/itramei-logo-white.png";
@@ -21,8 +22,19 @@ import {
 } from "./footerStyling";
 
 export default function Footer() {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
   return (
     <FooterContainer>
+      {isMobile && (
+        <LinkList>
+          <Logo src={LogoIcon} />
+          <Link>About Us</Link>
+          <Link>Itramei Waitlist</Link>
+          <Link>Event Waitlist</Link>
+          <Link>FAQ</Link>
+        </LinkList>
+      )}
       <Row>
         <FooterTitle>
           <Text $title>Contact Us</Text>
@@ -36,13 +48,15 @@ export default function Footer() {
           <Text>investment@itramei.com</Text>
         </EmailList>
       </Row>
-      <LinkList>
-        <Logo src={LogoIcon} />
-        <Link>About Us</Link>
-        <Link>Itramei Waitlist</Link>
-        <Link>Event Waitlist</Link>
-        <Link>FAQ</Link>
-      </LinkList>
+      {!isMobile && (
+        <LinkList>
+          <Logo src={LogoIcon} />
+          <Link>About Us</Link>
+          <Link>Itramei Waitlist</Link>
+          <Link>Event Waitlist</Link>
+          <Link>FAQ</Link>
+        </LinkList>
+      )}
       <Copyright>
         © 2024 <Name>ITRAMEI.</Name> All rights reserved.
       </Copyright>

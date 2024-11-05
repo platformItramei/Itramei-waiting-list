@@ -64,7 +64,7 @@ export default function Forms() {
       {formType === "itramei" && (
         <Form onSubmit={handleSubmit}>
           <InputWrapper>
-            <Label htmlFor="name">Name</Label>
+            <Label htmlFor="name">First Name</Label>
             <Input
               value={form.name}
               name="name"

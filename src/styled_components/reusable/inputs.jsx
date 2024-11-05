@@ -51,10 +51,14 @@ export const CheckboxWrapper = styled.div`
 `;
 
 export const Checkbox = styled.input`
-  height: 16px;
-  width: 16px;
+  height: 24px;
+  width: 24px;
   transform: translateY(-1px);
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    transform: translateY(-13px);
+  }
 `;
 
 export const CheckboxLabel = styled.p`
@@ -62,4 +66,8 @@ export const CheckboxLabel = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;

@@ -10,6 +10,10 @@ export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 36px;
+
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 export const FormTitle = styled.p`
@@ -18,6 +22,11 @@ export const FormTitle = styled.p`
   font-weight: 700;
   line-height: 27px;
   width: 80%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+    width: 100%;
+  }
 `;
 
 export const SubTitle = styled.p`
@@ -25,6 +34,10 @@ export const SubTitle = styled.p`
   font-size: 16px;
   color: rgba(102, 107, 125, 1);
   margin: -16px 0 0 0;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 export const Disclaimer = styled.p`
@@ -32,6 +45,10 @@ export const Disclaimer = styled.p`
   font-size: 13px;
   color: rgba(102, 107, 125, 1);
   grid-column: 1 / 3;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 export const Form = styled.form`
@@ -42,6 +59,10 @@ export const Form = styled.form`
     $launchList &&
     css`
       grid-template-columns: 1fr 1fr;
+      @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+      }
     `};
 `;
 
@@ -61,4 +82,9 @@ export const SubmitButton = styled.button`
     css`
       grid-column: 1 / 3;
     `}
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    font-weight: 500;
+  }
 `;

@@ -12,6 +12,10 @@ const Message = styled.p`
   color: rgba(41, 58, 75, 1);
   font-weight: 500;
   font-size: 14px;
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+    margin-top: -6px;
+  }
 `;
 
 const LinkContainer = styled.div`
@@ -37,6 +41,10 @@ const PrivacyLink = styled.p`
       border-left: solid 1px rgba(217, 218, 223, 1);
       padding: 0 16px;
     `}
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 export default function Privacy() {
