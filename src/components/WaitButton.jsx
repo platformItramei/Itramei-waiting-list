@@ -18,12 +18,10 @@ const WaitListButton = () => {
         fontFamily: 'Sansation'
       }}
     >
-      {/* Sliding background */}
       <span
         className="absolute inset-0 bg-[#1B92BF] transform -translate-x-full transition-transform duration-1000 ease-in-out group-hover:translate-x-0"
         style={{ zIndex: 1 }}
       ></span>
-      {/* Icon and text */}
       <span className="relative flex items-center z-10 transition-colors duration-1000 ease-in-out group-hover:text-white">
         <img src={itrameiIcon} alt="Itramei Icon" className="w-10 h-10 mr-2" />
         Join the Waitlist Today

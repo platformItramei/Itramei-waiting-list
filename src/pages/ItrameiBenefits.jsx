@@ -19,10 +19,8 @@ const ItrameiBenefits = () => {
         How Itramei Benefits You
       </h2>
 
-      {/* Tab Switcher with Sliding Effect */}
       <div className="flex justify-center mb-8">
         <div className="relative flex bg-[#105873] rounded-lg overflow-hidden w-full max-w-md h-[36px]">
-          {/* Sliding Background */}
           <div
             className={`absolute top-0 left-0 h-full w-1/2 bg-[#24C3FF] transition-transform duration-500 ease-in-out ${
               activeTab === 'individual' ? 'transform translate-x-full' : ''
