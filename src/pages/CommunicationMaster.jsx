@@ -1,5 +1,5 @@
 import React from 'react';
-import cyclePath from '../assets/images/itramei_cycle.png';
+import cyclePath from '../assets/images/itramei_cycle.svg';
 
 const CommunicationMaster = () => {
   return (
@@ -13,7 +13,7 @@ const CommunicationMaster = () => {
             color: '#000000',
           }}
         >
-          Master <span style={{ color: '#1B92BF' }}>Communication</span> with Itramei
+        <span style={{color:"#2C3E50",fontFamily:'Sansation'}}>Master</span>   <span style={{ color: '#1B92BF' ,fontFamily:'Sansation'}}>Communication</span>  <span style={{color:"#2C3E50"}}>with Itramei</span>  
         </h1>
         <br />
         <p

@@ -1,9 +1,10 @@
 import React from 'react';
-import increase from '../assets/icons/Featured icon-3.png';
-import reduceSales from '../assets/icons/Featured icon-1.png';
-import reduceConflicts from '../assets/icons/Featured icon-4.png';
-import cut from '../assets/icons/Featured icon-2.png';
+import increase from '../assets/icons/Featured icon-3.svg';
+import reduceSales from '../assets/icons/Featured icon-1.svg';
+import reduceConflicts from '../assets/icons/Featured icon-4.svg';
+import cut from '../assets/icons/Featured icon-2.svg';
 import Button from '../components/Button';
+import BenefitCard from '../components/Card';
 
 const CommunicationBenefits = () => {
   return (
@@ -14,92 +15,33 @@ const CommunicationBenefits = () => {
           lineHeight: '44px',
           letterSpacing: '-0.02em',
           fontFamily: 'Sansation, sans-serif',
+          color: "#2C3E50"
         }}
       >
-        <span style={{ color: '#1B92BF' }}>Effective communication</span> is proven to
+        <span style={{ color: '#1B92BF', fontFamily: 'Sansation' }}>Effective communication </span> is proven to
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-        {/* Card 1 */}
-        <div className="flex items-center p-6 bg-gray-50 rounded-lg shadow-md space-x-4">
-          <div className="flex-shrink-0">
-            <img
-              src={increase}
-              alt="Increase Productivity"
-              className="w-16 h-16 object-contain"
-            />
-          </div>
-          <div>
-            <p
-              className="text-lg font-normal leading-6 text-left text-gray-700"
-              style={{ fontFamily: 'Plus Jakarta Sans' }}
-            >
-              <span className="font-bold">Increase </span>
-              overall productivity by 30%, leading to faster project completion.
-            </p>
-          </div>
-        </div>
-
-        {/* Card 2 */}
-        <div className="flex items-center p-6 bg-gray-50 rounded-lg shadow-md space-x-4">
-          <div className="flex-shrink-0">
-            <img
-              src={reduceSales}
-              alt="Reduce Sales Cycle"
-              className="w-16 h-16 object-contain"
-            />
-          </div>
-          <div>
-            <p
-              className="text-lg font-normal leading-6 text-left text-gray-700"
-              style={{ fontFamily: 'Plus Jakarta Sans' }}
-            >
-              <span className="font-bold">Reduce </span>
-              sales cycles by 20% and achieve a 50% faster deal-closing rate.
-            </p>
-          </div>
-        </div>
-
-        {/* Card 3 */}
-        <div className="flex items-center p-6 bg-gray-50 rounded-lg shadow-md space-x-4">
-          <div className="flex-shrink-0">
-            <img
-              src={cut}
-              alt="Cut Churn"
-              className="w-16 h-16 object-contain"
-            />
-          </div>
-          <div>
-            <p
-              className="text-lg font-normal leading-6 text-left text-gray-700"
-              style={{ fontFamily: 'Plus Jakarta Sans' }}
-            >
-              <span className="font-bold">Lower </span>
-              churn by 20% and increase customer lifetime value by 15% with improved
-              transparency and responsiveness.
-            </p>
-          </div>
-        </div>
-
-        {/* Card 4 */}
-        <div className="flex items-center p-6 bg-gray-50 rounded-lg shadow-md space-x-4">
-          <div className="flex-shrink-0">
-            <img
-              src={reduceConflicts}
-              alt="Reduce Conflict Resolution Time"
-              className="w-16 h-16 object-contain"
-            />
-          </div>
-          <div>
-            <p
-              className="text-lg font-normal leading-6 text-left text-gray-700"
-              style={{ fontFamily: 'Plus Jakarta Sans' }}
-            >
-              <span className="font-bold">Reduce </span>
-              conflict resolution time by 40%, enhancing team focus and efficiency.
-            </p>
-          </div>
-        </div>
+        <BenefitCard 
+          icon={increase} 
+          title="Increase" 
+          description="overall productivity by 30%, leading to faster project completion."
+        />
+        <BenefitCard 
+          icon={reduceSales} 
+          title="Reduce" 
+          description="sales cycles by 20% and achieve a 50% faster deal-closing rate."
+        />
+        <BenefitCard 
+          icon={cut} 
+          title="Lower" 
+          description="churn by 20% and increase customer lifetime value by 15% with improved transparency and responsiveness."
+        />
+        <BenefitCard 
+          icon={reduceConflicts} 
+          title="Reduce" 
+          description="conflict resolution time by 40%, enhancing team focus and efficiency."
+        />
       </div>
 
       <div className="flex justify-center mt-12">

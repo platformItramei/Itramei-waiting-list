@@ -6,6 +6,10 @@ body {
   background-color: #f5f5f5;
 }
 
+.button:hover span:first-child {
+  transform: translateX(0); /* Move the background into view on hover */
+}
+
 .container {
   display: flex;
   width: 80%;
