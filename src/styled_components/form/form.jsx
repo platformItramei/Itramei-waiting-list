@@ -60,7 +60,7 @@ export default function Forms() {
   };
 
   return (
-    <FormContainer>
+    <FormContainer id="form">
       <ToggleForm formType={formType} setFormType={setFormType} />
       <FormTitle>{formTitle}</FormTitle>
       {formType === "launch" && (

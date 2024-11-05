@@ -23,7 +23,7 @@ const Container = styled.div`
 
 export default function FaqList() {
   return (
-    <Container>
+    <Container id="faq">
       <Title dark="Frequently Asked" blue="Questions" />
       {Object.entries(FaqData.faqs).map(([key, { question, answer }]) => (
         <FAQ key={key} question={question} answer={answer} />

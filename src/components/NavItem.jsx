@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const NavItem = ({ text, href = '#' }) => {
+const NavItem = ({ text, href = "#" }) => {
   return (
     <a
       href={href}
       className="text-white font-semibold text-lg leading-tight  "
-      style={{fontFamily: 'Sansation'}}
-
+      style={{ fontFamily: "Sansation" }}
     >
       {text}
     </a>

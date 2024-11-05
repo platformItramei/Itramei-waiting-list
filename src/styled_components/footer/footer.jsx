@@ -11,7 +11,6 @@ import {
   Row,
   FooterTitle,
   EmailList,
-  Email,
   Mail,
   Logo,
   LinkList,
@@ -25,14 +24,14 @@ export default function Footer() {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
-    <FooterContainer>
+    <FooterContainer id="footer">
       {isMobile && (
         <LinkList>
           <Logo src={LogoIcon} />
-          <Link>About Us</Link>
-          <Link>Itramei Waitlist</Link>
-          <Link>Event Waitlist</Link>
-          <Link>FAQ</Link>
+          <Link href="#about">About Us</Link>
+          <Link href="#form">Itramei Waitlist</Link>
+          <Link href="#form">Event Waitlist</Link>
+          <Link href="#faq">FAQ</Link>
         </LinkList>
       )}
       <Row>
@@ -51,10 +50,10 @@ export default function Footer() {
       {!isMobile && (
         <LinkList>
           <Logo src={LogoIcon} />
-          <Link>About Us</Link>
-          <Link>Itramei Waitlist</Link>
-          <Link>Event Waitlist</Link>
-          <Link>FAQ</Link>
+          <Link href="#about">About Us</Link>
+          <Link href="#form">Itramei Waitlist</Link>
+          <Link href="#form">Event Waitlist</Link>
+          <Link href="#faq">FAQ</Link>
         </LinkList>
       )}
       <Copyright>

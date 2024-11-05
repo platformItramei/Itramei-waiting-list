@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import NavItem from './NavItem';
+import React, { useState } from "react";
+import NavItem from "./NavItem";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,17 +26,17 @@ const Navbar = () => {
 
       {/* Right Side - Links for Desktop */}
       <div className="hidden md:flex space-x-8">
-        <NavItem text="About Us" />
-        <NavItem text="Itramei Waitlist" />
-        <NavItem text="Launch Event Waitlist" />
-        <NavItem text="FAQ" />
-        <NavItem text="Contact" />
+        <NavItem text="About Us" href="#about" />
+        <NavItem text="Itramei Waitlist" href="#form" />
+        <NavItem text="Launch Event Waitlist" href="#form" />
+        <NavItem text="FAQ" href="#faq" />
+        <NavItem text="Contact" href="#footer" />
       </div>
 
       {/* Mobile Menu */}
       <div
         className={`fixed top-0 right-0 w-2/3 h-screen bg-gray-900 text-white p-6 z-40 transform ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out`}
       >
         {/* Close Icon Inside Mobile Menu */}
@@ -64,11 +64,11 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="flex flex-col space-y-6 mt-16">
-          <NavItem text="About Us" />
-          <NavItem text="Itramei Waitlist" />
-          <NavItem text="Launch Event Waitlist" />
-          <NavItem text="FAQ" />
-          <NavItem text="Contact" />
+          <NavItem text="About Us" href="#about" />
+          <NavItem text="Itramei Waitlist" href="#form" />
+          <NavItem text="Launch Event Waitlist" href="#form" />
+          <NavItem text="FAQ" href="#faq" />
+          <NavItem text="Contact" href="#footer" />
         </div>
       </div>
     </div>
