@@ -102,9 +102,11 @@ const ItrameiBenefits = () => {
           className="text-white font-semibold text-base md:text-lg px-6 py-3 rounded-lg bg-white bg-opacity-10 border border-gray-400"
           style={{ fontFamily: "Plus Jakarta Sans" }}
         >
-          {activeTab === "business"
-            ? "Register for Exclusive Invitation"
-            : "Signup for Itramei Waitlist"}
+          <a href="#form">
+            {activeTab === "business"
+              ? "Register for Exclusive Invitation"
+              : "Signup for Itramei Waitlist"}
+          </a>
         </button>
       </div>
     </div>
