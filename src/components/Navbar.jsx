@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex items-center justify-between w-full px-6 md:px-20 h-[72px] fixed top-0 left-0 bg-black bg-opacity-50 text-white z-50">
+    <div className="flex items-center justify-between w-full px-6 lg:px-20 md:px-4 h-[72px] fixed top-0 left-0 bg-black bg-opacity-50 text-white z-50">
       <h1 className="text-xl font-bold font-['Sansation']">Itramei</h1>
 
       {/* Hamburger Menu Icon for Mobile */}

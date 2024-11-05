@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-//Font
+// Font
 import { PlusJakartaSans } from "../shared_styles";
 
-//Icon
+// Icon
 import ArrowActive from "../../assets/icons/active-arrow.png";
 import ArrowInactive from "../../assets/icons/inactive-arrow.png";
 
-//Styled Components
+// Styled Components
 const FaqWrapper = styled.div`
   ${PlusJakartaSans};
   width: 100%;
@@ -24,14 +24,10 @@ const FaqWrapper = styled.div`
   ${({ $open }) =>
     $open &&
     css`
-      max-height: 800px;
+      max-height: 1000px;
     `}
 
-  transition: all 1s ease;
-
-  @media screen and (max-width: 768px) {
-    max-height: 1000px;
-  }
+  transition: max-height 1s ease;
 `;
 
 const Icon = styled.img`
@@ -85,17 +81,13 @@ const Text = styled.p`
 
 export default function FAQ({ question, answer }) {
   const [open, setOpen] = useState(false);
-  const toggleOpen = () => setOpen(!open);
+  const toggleOpen = () => setOpen((prev) => !prev);
 
   return (
     <FaqWrapper $open={open}>
       <QuestionContainer onClick={toggleOpen}>
         <Text>{question}</Text>
-        {open ? (
-          <Icon src={ArrowActive} $open={open} />
-        ) : (
-          <Icon src={ArrowInactive} $open={open} />
-        )}
+        <Icon src={open ? ArrowActive : ArrowInactive} $open={open} />
       </QuestionContainer>
       <AnswerContainer $open={open}>
         <Text>{answer}</Text>

@@ -67,12 +67,11 @@ export const CheckboxWrapper = styled.div`
 `;
 
 export const Checkbox = styled.input`
-  height: 24px;
-  width: 24px;
-  transform: translateY(-1px);
+  height: 18px;
+  width: 18px;
   cursor: pointer;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 500px) {
     transform: translateY(-13px);
   }
 `;

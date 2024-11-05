@@ -53,7 +53,7 @@ export default function Privacy() {
   return (
     <PrivacyContainer>
       <Message>
-        Your Privacy is important to us. We will never share your information
+        Your privacy is important to us. We will never share your information
       </Message>
       <LinkContainer>
         <PrivacyLink>Privacy</PrivacyLink>

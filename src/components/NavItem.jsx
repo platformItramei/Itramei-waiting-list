@@ -4,8 +4,8 @@ const NavItem = ({ text, href = "#" }) => {
   return (
     <a
       href={href}
-      className="text-white font-semibold text-lg leading-tight  "
-      style={{ fontFamily: "Sansation" }}
+      className="text-white font-normal tracking-wide  text-lg leading-tight  "
+      style={{ fontFamily: "Plus Jakarta Sans" }}
     >
       {text}
     </a>
