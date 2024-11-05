@@ -19,19 +19,19 @@ const ItrameiBenefits = () => {
         How Itramei Benefits You
       </h2>
 
-      <div className="flex justify-center mb-8">
-        <div className="relative flex bg-[#105873] rounded-lg overflow-hidden w-full max-w-md h-[36px]">
+      <div className="flex justify-center mb-8 border-1">
+        <div className="relative flex bg-[#FAFAFF11] rounded-lg overflow-hidden w-full max-w-md h-[48px] border border-[#105873]">
           <div
-            className={`absolute top-0 left-0 h-full w-1/2 bg-[#24C3FF] transition-transform duration-500 ease-in-out ${
-              activeTab === "individual" ? "transform translate-x-full" : ""
+            className={`absolute top-[4px] left-[5px] h-[85%] rounded-[6px] w-1/2 bg-[#24C3FF] transition-transform duration-500 ease-in-out ${
+              activeTab === "individual" ? "transform translate-x-[96%]" : ""
             }`}
           ></div>
 
           {/* For Businesses Button */}
           <button
             onClick={() => setActiveTab("business")}
-            className={`relative z-10 w-1/2 font-semibold flex items-center justify-center ${
-              activeTab === "business" ? "text-white" : "text-gray-300"
+            className={`relative z-10 w-1/2 font-light flex items-center justify-center ${
+              activeTab === "business" ? "text-white" : "text-gray-400"
             }`}
             style={{
               fontFamily: "Plus Jakarta Sans",
@@ -43,8 +43,8 @@ const ItrameiBenefits = () => {
           {/* For Individuals Button */}
           <button
             onClick={() => setActiveTab("individual")}
-            className={`relative z-10 w-1/2 font-semibold flex items-center justify-center ${
-              activeTab === "individual" ? "text-white" : "text-gray-300"
+            className={`relative z-10 w-1/2 font-light flex items-center justify-center ${
+              activeTab === "individual" ? "text-white" : "text-gray-400"
             }`}
             style={{
               fontFamily: "Plus Jakarta Sans",
