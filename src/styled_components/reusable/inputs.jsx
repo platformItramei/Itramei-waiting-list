@@ -10,6 +10,7 @@ export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6px;
+  position: relative;
 
   ${({ $span }) =>
     $span &&
@@ -37,11 +38,24 @@ export const Input = styled.input`
   }
 `;
 
-export const Error = styled.p``;
+export const Error = styled.p`
+  position: absolute;
+  top: 75px;
+  right: 0;
+  color: red;
+  font-size: 12px;
+
+  ${({ $terms }) =>
+    $terms &&
+    css`
+      top: 30px;
+    `}
+`;
 
 // Checkbox Button
 
 export const CheckboxWrapper = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;

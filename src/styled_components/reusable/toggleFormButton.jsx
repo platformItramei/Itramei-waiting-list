@@ -2,6 +2,10 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { PlusJakartaSans } from "../shared_styles";
 
+//Redux
+import { useDispatch } from "react-redux";
+import { resetErrorState } from "../../redux/reducers/waiting_list_form";
+
 const ToggleContainer = styled.div`
   width: 100%;
   height: 48px;
@@ -49,8 +53,10 @@ const ActiveBackground = styled.div`
 `;
 
 export default function ToggleForm({ formType, setFormType }) {
+  const dispatch = useDispatch();
   const handleFormChange = (type) => {
     setFormType(type);
+    dispatch(resetErrorState());
   };
 
   return (

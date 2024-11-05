@@ -8,6 +8,9 @@ import {
   toggleTerms,
 } from "../../redux/reducers/waiting_list_form";
 
+//Functions
+import { handleValidate } from "./validate";
+
 //Styled Components
 import {
   FormContainer,
@@ -42,7 +45,7 @@ export default function Forms() {
   };
 
   const toggleTerm = () => {
-    dispatch(toggleTerms);
+    dispatch(toggleTerms());
   };
 
   const formTitle =
@@ -50,7 +53,11 @@ export default function Forms() {
       ? "Be one of the First to Gain Insight & Access"
       : "Register for an exclusive invitation to the Dublin launch event";
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const isValid = handleValidate(dispatch, form);
+    if (!isValid) return;
+  };
 
   return (
     <FormContainer>
@@ -58,7 +65,7 @@ export default function Forms() {
       <FormTitle>{formTitle}</FormTitle>
       {formType === "launch" && (
         <SubTitle>
-          Limited seats. Register today for an opportunity to get invited!{" "}
+          Limited seats. Register today for an opportunity to get invited!
         </SubTitle>
       )}
       {formType === "itramei" && (
@@ -71,6 +78,7 @@ export default function Forms() {
               id="name"
               onChange={handleInputChange}
             />
+            {form.error.name && <Error>{form.error.name}</Error>}
           </InputWrapper>
           <InputWrapper>
             <Label htmlFor="email">Email</Label>
@@ -79,20 +87,28 @@ export default function Forms() {
               name="email"
               id="email"
               onChange={handleInputChange}
+              placeholder="you@company.com"
             />
+            {form.error.email && <Error>{form.error.email}</Error>}
           </InputWrapper>
           <CheckboxWrapper>
-            <Checkbox type="checkbox" value={form.terms} onClick={toggleTerm} />
+            <Checkbox
+              name="checkbox"
+              type="checkbox"
+              checked={form.terms}
+              onChange={toggleTerm}
+            />
             <CheckboxLabel>
               I agree to receive communication from Itramei and accept the
               privacy policy.
             </CheckboxLabel>
+            {form.error.terms && <Error $terms>{form.error.terms}</Error>}
           </CheckboxWrapper>
           <SubmitButton type="submit">Sign up for Waitlist</SubmitButton>
         </Form>
       )}
       {formType === "launch" && (
-        <Form $launchList>
+        <Form $launchList onSubmit={handleSubmit}>
           <InputWrapper>
             <Label htmlFor="name">First Name</Label>
             <Input
@@ -100,8 +116,8 @@ export default function Forms() {
               onChange={handleInputChange}
               name="name"
               id="name"
-              placeholder="Clark"
             />
+            {form.error.name && <Error>{form.error.name}</Error>}
           </InputWrapper>
           <InputWrapper>
             <Label>Last Name</Label>
@@ -110,8 +126,8 @@ export default function Forms() {
               onChange={handleInputChange}
               name="surname"
               id="surname"
-              placeholder="Kent"
             />
+            {form.error.surname && <Error>{form.error.surname}</Error>}
           </InputWrapper>
           <InputWrapper>
             <Label htmlFor="email">Email</Label>
@@ -122,6 +138,7 @@ export default function Forms() {
               id="email"
               placeholder="you@company.com"
             />
+            {form.error.email && <Error>{form.error.email}</Error>}
           </InputWrapper>
           <InputWrapper>
             <Label htmlFor="phone">Phone Number</Label>
@@ -132,6 +149,7 @@ export default function Forms() {
               id="phone"
               placeholder="+353 8178 7488"
             />
+            {form.error.phone && <Error>{form.error.phone}</Error>}
           </InputWrapper>
           <InputWrapper $span>
             <Label htmlFor="org">Company Name</Label>
@@ -142,6 +160,7 @@ export default function Forms() {
               id="org"
               placeholder="Enter your company name"
             />
+            {form.error.org && <Error>{form.error.org}</Error>}
           </InputWrapper>
           <InputWrapper $span>
             <Label htmlFor="title">Title / Position</Label>
@@ -152,13 +171,19 @@ export default function Forms() {
               id="title"
               placeholder="Manager at Itramei"
             />
+            {form.error.title && <Error>{form.error.title}</Error>}
           </InputWrapper>
           <CheckboxWrapper $span>
-            <Checkbox type="checkbox" value={form.terms} onClick={toggleTerm} />
+            <Checkbox
+              type="checkbox"
+              checked={form.terms}
+              onChange={toggleTerm}
+            />
             <CheckboxLabel>
               I agree to receive communication from Itramei and accept the
               privacy policy.
             </CheckboxLabel>
+            {form.error.terms && <Error $terms>{form.error.terms}</Error>}
           </CheckboxWrapper>
           <SubmitButton $span>Join the Waitlist</SubmitButton>
           <Disclaimer>
