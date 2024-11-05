@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { PlusJakartaSans } from "../shared_styles";
 
 const ToggleContainer = styled.div`
   width: 100%;
@@ -14,13 +15,14 @@ const ToggleContainer = styled.div`
 `;
 
 const Button = styled.button`
+  ${PlusJakartaSans};
   width: 100%;
   height: 44px;
   border-radius: 8px;
   background-color: transparent;
   z-index: 999;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 28px;
   color: rgba(102, 107, 125, 1);
   transition: all 0.3s ease-in;

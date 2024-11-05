@@ -1,7 +1,9 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { PlusJakartaSans } from "../shared_styles";
 
 const PrivacyContainer = styled.div`
+  ${PlusJakartaSans};
   display: flex;
   align-items: center;
   flex-direction: column;

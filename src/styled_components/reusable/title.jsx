@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Sansation } from "../shared_styles";
 
 const Container = styled.div`
   display: flex;
@@ -18,6 +19,7 @@ const Container = styled.div`
 `;
 
 const Text = styled.p`
+  ${Sansation};
   color: rgba(41, 58, 75, 1);
   display: flex;
   align-items: center;

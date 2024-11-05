@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
+import { Sansation, PlusJakartaSans } from "../shared_styles";
 
 export const FormContainer = styled.div`
+  ${PlusJakartaSans};
   width: 100%;
   max-width: 800px;
   background-color: white;
@@ -17,6 +19,7 @@ export const FormContainer = styled.div`
 `;
 
 export const FormTitle = styled.p`
+  ${Sansation};
   color: rgba(41, 58, 75, 1);
   font-size: 24px;
   font-weight: 700;
@@ -30,6 +33,7 @@ export const FormTitle = styled.p`
 `;
 
 export const SubTitle = styled.p`
+  ${PlusJakartaSans};
   font-weight: 400;
   font-size: 16px;
   color: rgba(102, 107, 125, 1);
@@ -41,6 +45,7 @@ export const SubTitle = styled.p`
 `;
 
 export const Disclaimer = styled.p`
+  ${PlusJakartaSans};
   font-weight: 400;
   font-size: 13px;
   color: rgba(102, 107, 125, 1);
@@ -74,8 +79,9 @@ export const SubmitButton = styled.button`
   background-color: rgba(41, 58, 75, 1);
   color: white;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   margin-top: 8px;
+  letter-spacing: 1px;
 
   ${({ $span }) =>
     $span &&

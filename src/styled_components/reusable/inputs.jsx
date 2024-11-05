@@ -1,8 +1,10 @@
 import styled, { css } from "styled-components";
+import { PlusJakartaSans } from "../shared_styles";
 
 //Text Input
 
 export const InputWrapper = styled.div`
+  ${PlusJakartaSans};
   height: 70px;
   width: 100%;
   display: flex;

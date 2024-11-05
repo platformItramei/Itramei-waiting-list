@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
+//Font
+import { PlusJakartaSans } from "../shared_styles";
+
 //Icon
 import ArrowActive from "../../assets/icons/active-arrow.png";
 import ArrowInactive from "../../assets/icons/inactive-arrow.png";
 
 //Styled Components
 const FaqWrapper = styled.div`
+  ${PlusJakartaSans};
   width: 100%;
   max-height: 70px;
   max-width: 810px;
@@ -75,7 +79,7 @@ const AnswerContainer = styled.div`
 const Text = styled.p`
   color: rgba(3, 3, 3, 1);
   font-size: 16px;
-  line-height: 24px;
+  line-height: 32px;
   font-weight: 400;
 `;
 

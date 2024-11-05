@@ -18,15 +18,11 @@ function App() {
       <CommunicationBenefits />
       <ItrameiBenefits />
       <WhyJoinWaitlist />
-      {/* <WaitingListForm />
+      <WaitingListForm />
       <FaqList />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }
-
-
-
-
 
 export default App;

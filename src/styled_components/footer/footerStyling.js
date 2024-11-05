@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
+import { PlusJakartaSans } from "../shared_styles";
 
 export const FooterContainer = styled.footer`
+  ${PlusJakartaSans};
   background-color: rgba(41, 58, 75, 1);
   padding: 60px 70px;
   display: flex;
@@ -58,6 +60,13 @@ export const Text = styled.p`
       font-weight: 700;
     `}
 
+  ${({ $border }) =>
+    $border &&
+    css`
+      border-right: solid 1px white;
+      padding: 0 10px;
+    `}
+
   @media screen and (max-width: 1000px) {
     font-size: 14px;
     letter-spacing: 0.5px;
@@ -67,6 +76,13 @@ export const Text = styled.p`
       css`
         font-size: 32px;
         font-weight: 700;
+      `}
+
+    ${({ $border }) =>
+      $border &&
+      css`
+        border-right: none;
+        padding: 0;
       `}
   }
 `;
