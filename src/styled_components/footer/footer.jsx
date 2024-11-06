@@ -2,8 +2,8 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 
 // Images / Icon
-import LogoIcon from "../../assets/icons/itramei-logo-white.png";
-import MailIcon from "../../assets/icons/mail-icon.png";
+import LogoIcon from "../../assets/icons/logo.svg";
+import MailIcon from "../../assets/icons/mail-icon.svg";
 
 //styled components
 import {

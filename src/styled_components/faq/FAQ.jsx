@@ -5,8 +5,8 @@ import styled, { css } from "styled-components";
 import { PlusJakartaSans } from "../shared_styles";
 
 // Icon
-import ArrowActive from "../../assets/icons/active-arrow.png";
-import ArrowInactive from "../../assets/icons/inactive-arrow.png";
+import ArrowActive from "../../assets/icons/arrow-filled.svg";
+import ArrowInactive from "../../assets/icons/arrow-blank.svg";
 
 // Styled Components
 const FaqWrapper = styled.div`
