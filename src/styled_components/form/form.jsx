@@ -38,8 +38,7 @@ import axios from "axios";
 export default function Forms() {
   const dispatch = useDispatch();
   const form = useSelector((state) => state.form);
-
-  const [formType, setFormType] = useState("itramei");
+  const formType = useSelector((state) => state.form.form);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -81,7 +80,7 @@ export default function Forms() {
 
   return (
     <FormContainer id="form">
-      <ToggleForm formType={formType} setFormType={setFormType} />
+      <ToggleForm formType={formType} />
       <FormTitle>{formTitle}</FormTitle>
       {formType === "launch" && (
         <SubTitle>

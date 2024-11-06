@@ -21,13 +21,22 @@ const Container = styled.div`
   }
 `;
 
+const NoFaqs = styled.p`
+  color: red;
+  font-size: 18px;
+`;
+
 export default function FaqList() {
   return (
     <Container id="faq">
       <Title dark="Frequently Asked" blue="Questions" />
-      {Object.entries(FaqData.faqs).map(([key, { question, answer }]) => (
-        <FAQ key={key} question={question} answer={answer} />
-      ))}
+      {FaqData.faqs ? (
+        Object.entries(FaqData.faqs).map(([key, { question, answer }]) => (
+          <FAQ key={key} question={question} answer={answer} />
+        ))
+      ) : (
+        <NoFaqs>There's no FAQs available at the moment...</NoFaqs>
+      )}
     </Container>
   );
 }

@@ -4,7 +4,10 @@ import { PlusJakartaSans } from "../shared_styles";
 
 //Redux
 import { useDispatch } from "react-redux";
-import { resetErrorState } from "../../redux/reducers/waiting_list_form";
+import {
+  resetErrorState,
+  setForm,
+} from "../../redux/reducers/waiting_list_form";
 
 const ToggleContainer = styled.div`
   width: 100%;
@@ -30,12 +33,19 @@ const Button = styled.button`
   font-weight: 500;
   line-height: 28px;
   color: rgba(102, 107, 125, 1);
-  transition: all 0.3s ease-in;
+  transition: color 0.3s ease-in;
+
+  &:hover {
+    color: black;
+  }
 
   ${({ $isActive }) =>
     $isActive &&
     css`
       color: white;
+      &:hover {
+        color: white;
+      }
     `}
 
   @media screen and (max-width: 768px) {
@@ -53,10 +63,10 @@ const ActiveBackground = styled.div`
   transition: left 0.5s ease;
 `;
 
-export default function ToggleForm({ formType, setFormType }) {
+export default function ToggleForm({ formType }) {
   const dispatch = useDispatch();
   const handleFormChange = (type) => {
-    setFormType(type);
+    dispatch(setForm(type));
     dispatch(resetErrorState());
   };
 

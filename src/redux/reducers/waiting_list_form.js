@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  //Form
+  form: "itramei",
+
   //Shared state
   name: "",
   email: "",
@@ -32,8 +35,8 @@ const formSlice = createSlice({
     updateField: (state, action) => {
       state[action.payload.field] = action.payload.value;
     },
-    updatePhone: (state, action) => {
-      state.phone = action.payload;
+    setForm: (state, action) => {
+      state.form = action.payload;
     },
     updateErrorField: (state, action) => {
       state.error[action.payload.field] = action.payload.message;
@@ -53,6 +56,7 @@ const formSlice = createSlice({
 export const {
   resetState,
   updateField,
+  setForm,
   updateErrorField,
   toggleTerms,
   resetErrorState,

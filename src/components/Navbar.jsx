@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import NavItem from "./NavItem";
 
+//redux
+import { useDispatch } from "react-redux";
+import { setForm } from "../redux/reducers/waiting_list_form";
+
 const Navbar = () => {
+  const dispatch = useDispatch();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleFormChange = (type) => {
+    dispatch(setForm(type));
   };
 
   return (
@@ -26,9 +35,17 @@ const Navbar = () => {
 
       {/* Right Side - Links for Desktop */}
       <div className="hidden md:flex space-x-8">
-        <NavItem text="About Us" href="#about" />
-        <NavItem text="Itramei Waitlist" href="#form" />
-        <NavItem text="Launch Event Waitlist" href="#form" />
+        <NavItem text="About" href="#about" />
+        <NavItem
+          text="Itramei Waitlist"
+          href="#form"
+          onClick={() => handleFormChange("itramei")}
+        />
+        <NavItem
+          text="Launch Event Waitlist"
+          href="#form"
+          onClick={() => handleFormChange("launch")}
+        />
         <NavItem text="FAQ" href="#faq" />
         <NavItem text="Contact" href="#footer" />
       </div>
@@ -64,9 +81,17 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="flex flex-col space-y-6 mt-16">
-          <NavItem text="About Us" href="#about" />
-          <NavItem text="Itramei Waitlist" href="#form" />
-          <NavItem text="Launch Event Waitlist" href="#form" />
+          <NavItem text="About" href="#about" />
+          <NavItem
+            text="Itramei Waitlist"
+            href="#form"
+            onClick={() => handleFormChange("itramei")}
+          />
+          <NavItem
+            text="Launch Event Waitlist"
+            href="#form"
+            onClick={() => handleFormChange("launch")}
+          />
           <NavItem text="FAQ" href="#faq" />
           <NavItem text="Contact" href="#footer" />
         </div>

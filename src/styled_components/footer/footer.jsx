@@ -1,6 +1,10 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 
+//Redux
+import { useDispatch } from "react-redux";
+import { setForm } from "../../redux/reducers/waiting_list_form";
+
 // Images / Icon
 import LogoIcon from "../../assets/icons/logo.svg";
 import MailIcon from "../../assets/icons/mail-icon.svg";
@@ -21,7 +25,13 @@ import {
 } from "./footerStyling";
 
 export default function Footer() {
+  const dispatch = useDispatch();
+
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
+  const handleClick = (type) => {
+    dispatch(setForm(type));
+  };
 
   return (
     <FooterContainer id="footer">
@@ -29,8 +39,12 @@ export default function Footer() {
         <LinkList>
           <Logo src={LogoIcon} />
           <Link href="#about">About Us</Link>
-          <Link href="#form">Itramei Waitlist</Link>
-          <Link href="#form">Event Waitlist</Link>
+          <Link href="#form" onClick={() => handleClick("itramei")}>
+            Itramei Waitlist
+          </Link>
+          <Link href="#form" onClick={() => handleClick("launch")}>
+            Event Waitlist
+          </Link>
           <Link href="#faq">FAQ</Link>
         </LinkList>
       )}
@@ -57,8 +71,12 @@ export default function Footer() {
         <LinkList>
           <Logo src={LogoIcon} />
           <Link href="#about">About Us</Link>
-          <Link href="#form">Itramei Waitlist</Link>
-          <Link href="#form">Event Waitlist</Link>
+          <Link href="#form" onClick={() => handleClick("itramei")}>
+            Itramei Waitlist
+          </Link>
+          <Link href="#form" onClick={() => handleClick("launch")}>
+            Event Waitlist
+          </Link>
           <Link href="#faq">FAQ</Link>
         </LinkList>
       )}
