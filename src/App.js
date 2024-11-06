@@ -1,4 +1,6 @@
 import "./App.css";
+
+//Sections
 import CommunicationMaster from "./pages/CommunicationMaster";
 import CommunicationBenefits from "./pages/CommunicationBenefits";
 import ItrameiBenefits from "./pages/ItrameiBenefits";
@@ -8,20 +10,24 @@ import Navbar from "./components/Navbar";
 import WaitingListForm from "./styled_components/form/container";
 import FaqList from "./styled_components/faq/faqList.jsx";
 import Footer from "./styled_components/footer/footer";
+
+//Modals
 import TermsModal from "./styled_components/terms/terms.jsx";
+import PrivacyModal from "./styled_components/privacyModal/privacyModal.jsx";
 
 //Redux
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTerms } from "./redux/reducers/waiting_list_form.js";
+import { togglePrivacy } from "./redux/reducers/modals.js";
 
 function App() {
   const dispatch = useDispatch();
-  const toggleModal = () => dispatch(toggleTerms());
-  const visible = useSelector((state) => state.terms.open);
+  const modals = useSelector((state) => state.modals);
 
   return (
     <>
-      {visible && <TermsModal onClick={toggleModal} />}
+      {modals.terms && <TermsModal />}
+      {modals.privacy && <PrivacyModal />}
       <div className="App">
         <Navbar />
         <HeroSection />

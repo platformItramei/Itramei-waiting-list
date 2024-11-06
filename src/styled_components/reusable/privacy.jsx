@@ -4,7 +4,7 @@ import { PlusJakartaSans } from "../shared_styles";
 
 //Redux
 import { useDispatch } from "react-redux";
-import { toggleVisibility } from "../../redux/reducers/terms_modal";
+import { toggleTerms, togglePrivacy } from "../../redux/reducers/modals";
 
 const PrivacyContainer = styled.div`
   ${PlusJakartaSans};
@@ -77,15 +77,16 @@ const ContactUs = styled.a`
 
 export default function Privacy() {
   const dispatch = useDispatch();
-  const handleClick = () => dispatch(toggleVisibility());
+  const showTerms = () => dispatch(toggleTerms());
+  const showPrivacy = () => dispatch(togglePrivacy());
   return (
     <PrivacyContainer>
       <Message>
         Your privacy is important to us. We will never share your information
       </Message>
       <LinkContainer>
-        <PrivacyLink>Privacy</PrivacyLink>
-        <PrivacyLink $border onClick={handleClick}>
+        <PrivacyLink onClick={showPrivacy}>Privacy</PrivacyLink>
+        <PrivacyLink $border onClick={showTerms}>
           Terms of Service
         </PrivacyLink>
         <ContactUs href="#footer">Contact Us</ContactUs>

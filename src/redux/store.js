@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import formReducer from "./reducers/waiting_list_form";
-import termsReducer from "./reducers/terms_modal";
+import modalReducer from "./reducers/modals";
 
 const store = configureStore({
   reducer: {
     form: formReducer,
-    terms: termsReducer,
+    modals: modalReducer,
   },
 });
 

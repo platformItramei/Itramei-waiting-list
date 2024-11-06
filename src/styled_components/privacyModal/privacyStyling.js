@@ -47,12 +47,6 @@ export const SubHeader = styled.div`
   font-weight: 600;
 `;
 
-export const Text = styled.p`
-  width: 70%;
-  text-align: center;
-  margin-top: 48px;
-`;
-
 //Extra
 export const Blue = styled.span`
   color: rgba(27, 146, 191, 1);
@@ -60,14 +54,14 @@ export const Blue = styled.span`
 
 export const Icon = styled.i`
   position: absolute;
-  right: 0;
+  right: -80px;
   top: -40px;
   font-size: 24px;
   cursor: pointer;
 
   @media screen and (max-width: 768px) {
     top: 10px;
-    right: 10px;
+    right: 5px;
     position: fixed;
   }
 `;
