@@ -68,6 +68,8 @@ export default function Forms() {
 
     //access keys by using the form variable i.e form.name, form.surname, form.emai. etc...
     //state slice / container you can find in redux/waiting_list_form.js
+
+    dispatch(resetState());
   };
 
   return (
