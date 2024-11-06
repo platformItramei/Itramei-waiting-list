@@ -60,14 +60,7 @@ export const Text = styled.p`
       font-weight: 700;
     `}
 
-  ${({ $border }) =>
-    $border &&
-    css`
-      border-right: solid 1px white;
-      padding: 0 10px;
-    `}
-
-    @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1100px) {
     ${({ $email }) =>
       $email &&
       css`
@@ -132,6 +125,13 @@ export const LinkList = styled.div`
 export const Link = styled.a`
   color: white;
   cursor: pointer;
+
+  ${({ $border }) =>
+    $border &&
+    css`
+      border-right: solid 1px white;
+      padding: 0 10px;
+    `}
 
   &:hover {
     color: rgba(36, 195, 255, 1);
