@@ -60,14 +60,6 @@ export const Text = styled.p`
       font-weight: 700;
     `}
 
-  @media screen and (max-width: 1100px) {
-    ${({ $email }) =>
-      $email &&
-      css`
-        font-size: 12px;
-      `}
-  }
-
   @media screen and (max-width: 1000px) {
     font-size: 14px;
     letter-spacing: 0.5px;
@@ -132,6 +124,14 @@ export const Link = styled.a`
       border-right: solid 1px white;
       padding: 0 10px;
     `}
+
+  @media screen and (max-width: 1100px) {
+    ${({ $email }) =>
+      $email &&
+      css`
+        font-size: 12px;
+      `}
+  }
 
   &:hover {
     color: rgba(36, 195, 255, 1);
