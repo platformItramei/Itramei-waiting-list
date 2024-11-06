@@ -50,6 +50,14 @@ export const Error = styled.p`
     css`
       top: 30px;
     `}
+
+  @media screen and (max-width: 768px) {
+    ${({ $terms }) =>
+      $terms &&
+      css`
+        top: 50px;
+      `}
+  }
 `;
 
 // Checkbox Button

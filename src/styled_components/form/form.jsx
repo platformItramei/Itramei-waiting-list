@@ -45,7 +45,8 @@ export default function Forms() {
     const { name, value } = e.target;
 
     if (name === "phone") {
-      const numericValue = value.replace(/\D/g, "");
+      // Allow only numbers and a single '+' at the start
+      const numericValue = value.replace(/(?!^\+)\D/g, "");
       dispatch(updateField({ field: name, value: numericValue }));
     } else {
       dispatch(updateField({ field: name, value }));

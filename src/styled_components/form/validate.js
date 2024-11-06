@@ -9,6 +9,7 @@ export const handleValidate = (dispatch, form) => {
   const termsError = "You must agree to the terms and conditions!";
   const emailError = "Must be a valid email!";
   const abusiveError = "Please refrain from using abusive words.";
+  const lengthError = "This must be at least 3 letters long";
 
   // Helper function to check for banned words
   const containsBannedWords = (input) => {
@@ -25,6 +26,8 @@ export const handleValidate = (dispatch, form) => {
   } else if (containsBannedWords(form.name)) {
     dispatch(updateErrorField({ field: "name", message: abusiveError }));
     valid = false;
+  } else if (form.name.length < 3) {
+    dispatch(updateErrorField({ field: "name", message: lengthError }));
   } else {
     dispatch(updateErrorField({ field: "name", message: "" }));
   }
@@ -36,6 +39,8 @@ export const handleValidate = (dispatch, form) => {
   } else if (containsBannedWords(form.surname)) {
     dispatch(updateErrorField({ field: "surname", message: abusiveError }));
     valid = false;
+  } else if (form.surname.length < 3) {
+    dispatch(updateErrorField({ field: "surname", message: lengthError }));
   } else {
     dispatch(updateErrorField({ field: "surname", message: "" }));
   }
@@ -57,6 +62,16 @@ export const handleValidate = (dispatch, form) => {
   if (!form.phone) {
     dispatch(updateErrorField({ field: "phone", message: emptyError }));
     valid = false;
+  } else if (!/^\+[0-9]{7,15}$/.test(form.phone)) {
+    // Require '+' at the start, followed by 7-15 digits
+    // Allows optional '+' and 7-15 digits
+    dispatch(
+      updateErrorField({
+        field: "phone",
+        message: "Invalid number format. Dont forget your land code",
+      })
+    );
+    valid = false;
   } else {
     dispatch(updateErrorField({ field: "phone", message: "" }));
   }
@@ -68,6 +83,8 @@ export const handleValidate = (dispatch, form) => {
   } else if (containsBannedWords(form.org)) {
     dispatch(updateErrorField({ field: "org", message: abusiveError }));
     valid = false;
+  } else if (form.org.length < 3) {
+    dispatch(updateErrorField({ field: "org", message: lengthError }));
   } else {
     dispatch(updateErrorField({ field: "org", message: "" }));
   }
@@ -79,6 +96,8 @@ export const handleValidate = (dispatch, form) => {
   } else if (containsBannedWords(form.title)) {
     dispatch(updateErrorField({ field: "title", message: abusiveError }));
     valid = false;
+  } else if (form.title.length < 3) {
+    dispatch(updateErrorField({ field: "title", message: lengthError }));
   } else {
     dispatch(updateErrorField({ field: "title", message: "" }));
   }
