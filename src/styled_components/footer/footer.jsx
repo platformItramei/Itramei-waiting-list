@@ -41,10 +41,16 @@ export default function Footer() {
         </FooterTitle>
         <EmailList>
           <Mail src={MailIcon} />
-          <Text $border>presales@itramei.com</Text>
-          <Text $border>press@itramei.com</Text>
-          <Text $border>info@itramei.com</Text>
-          <Text>investment@itramei.com</Text>
+          <Text $border $email>
+            presales@itramei.com
+          </Text>
+          <Text $border $email>
+            press@itramei.com
+          </Text>
+          <Text $border $email>
+            info@itramei.com
+          </Text>
+          <Text $email>investment@itramei.com</Text>
         </EmailList>
       </Row>
       {!isMobile && (

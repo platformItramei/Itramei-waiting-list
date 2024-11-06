@@ -67,6 +67,14 @@ export const Text = styled.p`
       padding: 0 10px;
     `}
 
+    @media screen and (max-width: 1100px) {
+    ${({ $email }) =>
+      $email &&
+      css`
+        font-size: 12px;
+      `}
+  }
+
   @media screen and (max-width: 1000px) {
     font-size: 14px;
     letter-spacing: 0.5px;
