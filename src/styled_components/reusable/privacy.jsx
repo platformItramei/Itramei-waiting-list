@@ -2,6 +2,10 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { PlusJakartaSans } from "../shared_styles";
 
+//Redux
+import { useDispatch } from "react-redux";
+import { toggleVisibility } from "../../redux/reducers/terms_modal";
+
 const PrivacyContainer = styled.div`
   ${PlusJakartaSans};
   display: flex;
@@ -49,7 +53,31 @@ const PrivacyLink = styled.p`
   }
 `;
 
+const ContactUs = styled.a`
+  color: rgba(29, 156, 204, 1);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+  ${({ $border }) =>
+    $border &&
+    css`
+      border-right: solid 1px rgba(217, 218, 223, 1);
+      border-left: solid 1px rgba(217, 218, 223, 1);
+      padding: 0 16px;
+    `}
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
+
 export default function Privacy() {
+  const dispatch = useDispatch();
+  const handleClick = () => dispatch(toggleVisibility());
   return (
     <PrivacyContainer>
       <Message>
@@ -57,8 +85,10 @@ export default function Privacy() {
       </Message>
       <LinkContainer>
         <PrivacyLink>Privacy</PrivacyLink>
-        <PrivacyLink $border>Terms of Service</PrivacyLink>
-        <PrivacyLink>Contact Us</PrivacyLink>
+        <PrivacyLink $border onClick={handleClick}>
+          Terms of Service
+        </PrivacyLink>
+        <ContactUs href="#footer">Contact Us</ContactUs>
       </LinkContainer>
     </PrivacyContainer>
   );

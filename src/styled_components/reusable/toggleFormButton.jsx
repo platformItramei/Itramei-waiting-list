@@ -16,6 +16,7 @@ const ToggleContainer = styled.div`
   border: solid 1px rgba(232, 234, 237, 1);
   background-color: rgba(242, 241, 242, 1);
   border-radius: 8px;
+  z-index: 10;
 `;
 
 const Button = styled.button`
