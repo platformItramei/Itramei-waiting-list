@@ -43,7 +43,13 @@ export default function Forms() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    dispatch(updateField({ field: name, value }));
+
+    if (name === "phone") {
+      const numericValue = value.replace(/\D/g, "");
+      dispatch(updateField({ field: name, value: numericValue }));
+    } else {
+      dispatch(updateField({ field: name, value }));
+    }
   };
 
   const toggleTerm = () => {

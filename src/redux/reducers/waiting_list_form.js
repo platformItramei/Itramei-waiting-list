@@ -33,6 +33,9 @@ const formSlice = createSlice({
     updateField: (state, action) => {
       state[action.payload.field] = action.payload.value;
     },
+    updatePhone: (state, action) => {
+      state.phone = action.payload;
+    },
     updateErrorField: (state, action) => {
       state.error[action.payload.field] = action.payload.message;
     },
