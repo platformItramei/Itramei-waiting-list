@@ -32,11 +32,13 @@ import {
   CheckboxLabel,
 } from "../reusable/inputs";
 
+//API
+import axios from "axios";
+
 export default function Forms() {
   const dispatch = useDispatch();
   const form = useSelector((state) => state.form);
 
-  //This will toggle between itramei and launch
   const [formType, setFormType] = useState("itramei");
 
   const handleInputChange = (e) => {
@@ -55,8 +57,17 @@ export default function Forms() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    //Handles validation of form
     const isValid = handleValidate(dispatch, form);
     if (!isValid) return;
+
+    //Handle sumbitting of form here
+    //Axios is installed
+    //POST is all needed
+
+    //access keys by using the form variable i.e form.name, form.surname, form.emai. etc...
+    //state slice / container you can find in redux/waiting_list_form.js
   };
 
   return (
