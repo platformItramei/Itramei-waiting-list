@@ -21,6 +21,10 @@ const FaqWrapper = styled.div`
   cursor: pointer;
   border: solid 1px rgba(233, 233, 231, 1);
 
+  &:hover {
+    border: solid 1px rgba(36, 195, 255, 1);
+  }
+
   ${({ $open }) =>
     $open &&
     css`

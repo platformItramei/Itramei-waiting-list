@@ -134,7 +134,7 @@ export const Link = styled.a`
   cursor: pointer;
 
   &:hover {
-    text-decoration: underline;
+    color: rgba(36, 195, 255, 1);
   }
 `;
 

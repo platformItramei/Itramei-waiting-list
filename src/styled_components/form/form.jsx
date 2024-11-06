@@ -40,6 +40,9 @@ export default function Forms() {
   const form = useSelector((state) => state.form);
   const formType = useSelector((state) => state.form.form);
 
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
@@ -63,6 +66,7 @@ export default function Forms() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
 
     //Handles validation of form
     const isValid = handleValidate(dispatch, form);
@@ -76,6 +80,7 @@ export default function Forms() {
     //state slice / container you can find in redux/waiting_list_form.js
 
     dispatch(resetState());
+    setLoading(false);
   };
 
   return (
@@ -123,7 +128,7 @@ export default function Forms() {
             </CheckboxLabel>
             {form.error.terms && <Error $terms>{form.error.terms}</Error>}
           </CheckboxWrapper>
-          <SubmitButton type="submit">Sign up for Waitlist</SubmitButton>
+          <SubmitButton type="submit">Join The Waitlist</SubmitButton>
         </Form>
       )}
       {formType === "launch" && (
@@ -204,7 +209,10 @@ export default function Forms() {
             </CheckboxLabel>
             {form.error.terms && <Error $terms>{form.error.terms}</Error>}
           </CheckboxWrapper>
-          <SubmitButton $span>Join the Waitlist</SubmitButton>
+          <SubmitButton $span>
+            {loading && "Loading..."}
+            Join the Waitlist
+          </SubmitButton>
           <Disclaimer>
             Registering does not guarantee an invitation. A personalized invite
             will be sent if selected, as seats are limited. Thank you for your

@@ -89,6 +89,11 @@ export const SubmitButton = styled.button`
       grid-column: 1 / 3;
     `}
 
+  &:hover {
+    opacity: 90%;
+  }
+  transition: all 0.3s ease;
+
   @media screen and (max-width: 768px) {
     font-size: 14px;
     font-weight: 500;

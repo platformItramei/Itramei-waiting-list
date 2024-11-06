@@ -55,7 +55,7 @@ const Button = styled.button`
 
 const ActiveBackground = styled.div`
   background-color: rgba(36, 195, 255, 1);
-  width: 49%; /* Match button width */
+  width: 49%;
   height: 38px;
   border-radius: 8px;
   position: absolute;
