@@ -60,7 +60,7 @@ export default function SuccessModal({ onClick }) {
   return (
     <ModalContainer>
       <Modal>
-        <Title>Form submitted!</Title>
+        <Title><span style={{color : '#2C3E50'}} >Form submitted!</span></Title>
         <Message>
           Thank you for joining the waiting list. <br />
           We will be in touch with you shortly.

@@ -47,8 +47,9 @@ const CommunicationBenefits = () => {
         />
       </div>
 
+
       <a href="#form" className="flex justify-center mt-12">
-        <Button text="Join the Waitlist Today" />
+        <Button  eventtype="itramei" text="Join the Waitlist Today" />
       </a>
     </div>
   );

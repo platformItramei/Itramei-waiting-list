@@ -21,6 +21,7 @@ export const handleValidate = (dispatch, form) => {
 
   // Name
   if (!form.name) {
+    console.log("form.name");
     dispatch(updateErrorField({ field: "name", message: emptyError }));
     valid = false;
   } else if (containsBannedWords(form.name)) {
@@ -30,6 +31,8 @@ export const handleValidate = (dispatch, form) => {
     dispatch(updateErrorField({ field: "name", message: lengthError }));
   } else {
     dispatch(updateErrorField({ field: "name", message: "" }));
+    console.log("valid");
+    console.log(valid)
   }
 
   // Surname
@@ -63,12 +66,10 @@ export const handleValidate = (dispatch, form) => {
     dispatch(updateErrorField({ field: "phone", message: emptyError }));
     valid = false;
   } else if (!/^\+[0-9]{7,15}$/.test(form.phone)) {
-    // Require '+' at the start, followed by 7-15 digits
-    // Allows optional '+' and 7-15 digits
     dispatch(
       updateErrorField({
         field: "phone",
-        message: "Invalid number format. Dont forget your land code",
+        message: "Invalid number format. Dont forget your country code",
       })
     );
     valid = false;

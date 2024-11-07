@@ -1,8 +1,21 @@
 import React from 'react';
+import { useDispatch } from "react-redux";
+import { setForm } from "../redux/reducers/waiting_list_form";
 
-const Button = ({ text }) => {
+const Button = ({ text,eventtype }) => {
+
+  const dispatch = useDispatch(); 
+
+  const handleFormChange = (eventtype) => {
+    dispatch(setForm(eventtype)); 
+  };
+
   return (
     <button
+     href="#form"
+     onClick={(e) => {
+       handleFormChange(eventtype);
+    }}
       className="relative overflow-hidden group text-gray-900 font-semibold text-lg flex items-center justify-center transition-colors duration-1000"
       style={{
         width: '246px',
@@ -13,7 +26,6 @@ const Button = ({ text }) => {
         backgroundColor: '#FFFFFF',
         border: '1px solid #293A4B',
         fontFamily: 'Sansation'
-
       }}
     >
       <span

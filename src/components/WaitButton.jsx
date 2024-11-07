@@ -1,10 +1,22 @@
 import React from "react";
 import itrameiIcon from "../assets/icons/Itramei_Icon.svg";
+import { useDispatch } from "react-redux";
+import { setForm } from "../redux/reducers/waiting_list_form";
 
 const WaitListButton = () => {
+  const dispatch = useDispatch(); 
+
+  const handleFormChange = (eventtype) => {
+    dispatch(setForm(eventtype)); 
+  };
+
   return (
     <button
       className="relative flex items-center overflow-hidden group text-[#1F2C38] font-semibold text-lg shadow-md transition-colors duration-1000"
+      onClick={(e) => {
+        handleFormChange("itramei");
+     }}
+      href="#form"
       style={{
         width: "280.57px",
         height: "48px",
@@ -26,6 +38,7 @@ const WaitListButton = () => {
         className="relative flex items-center z-10 transition-colors duration-1000 ease-in-out group-hover:text-white"
         href="#form"
       >
+ 
         <img src={itrameiIcon} alt="Itramei Icon" className="w-10 h-10 mr-2" />
         Join the Waitlist Today
       </a>

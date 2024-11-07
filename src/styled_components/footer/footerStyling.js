@@ -121,8 +121,7 @@ export const Link = styled.a`
   ${({ $border }) =>
     $border &&
     css`
-      border-right: solid 1px white;
-      padding: 0 10px;
+      padding: 0px 1px 0px 0px;
     `}
 
   @media screen and (max-width: 1100px) {

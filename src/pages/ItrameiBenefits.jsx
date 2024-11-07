@@ -6,10 +6,16 @@ import BenefitCard from "../components/BenefitCard";
 import increase from "../assets/icons/Individual1.svg";
 import strength from "../assets/icons/Individual2.svg";
 import boost from "../assets/icons/Individual3.svg";
+import { useDispatch } from "react-redux";
+import { setForm } from "../redux/reducers/waiting_list_form";
 
 const ItrameiBenefits = () => {
   const [activeTab, setActiveTab] = useState("business");
+  const dispatch = useDispatch(); 
 
+  const handleFormChange = (eventtype) => {
+    dispatch(setForm(eventtype)); 
+  };
   return (
     <div className="w-full mx-auto bg-[#0D4459] py-20 px-4 md:px-10 overflow-x-hidden">
       <h2
@@ -99,10 +105,21 @@ const ItrameiBenefits = () => {
       {/* Register Button */}
       <div className="flex justify-center mt-10">
         <button
-          className="text-white font-semibold text-base md:text-lg px-6 py-3 rounded-lg bg-white bg-opacity-10 border border-gray-400"
+        
+          className="text-white font-semibold text-base md:text-md px-4 py-2 rounded-lg bg-white bg-opacity-10 border border-gray-400"
           style={{ fontFamily: "Plus Jakarta Sans" }}
         >
-          <a href="#form">
+          <a href="#form" onClick={(e) => {
+            if(activeTab==="business")
+            {
+              handleFormChange("launch")
+            }
+            else
+            {
+              handleFormChange("itramei")
+            }
+           }}>
+            
             {activeTab === "business"
               ? "Register for Exclusive Invitation"
               : "Signup for Itramei Waitlist"}

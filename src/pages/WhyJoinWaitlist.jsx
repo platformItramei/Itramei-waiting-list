@@ -49,7 +49,7 @@ const WhyJoinWaitlist = () => {
                 top: "0",
                 right: "0",
                 width: "60%",
-                transform: "translate(30%, -40%)",
+                transform: "translate(30%, -10%)",
               }}
             />
             <img
@@ -60,7 +60,7 @@ const WhyJoinWaitlist = () => {
                 bottom: "0",
                 left: "0",
                 width: "85%",
-                transform: "translate(-17%, -43%)",
+                transform: "translate(-6%, -20%)",
               }}
             />
           </div>
@@ -68,7 +68,7 @@ const WhyJoinWaitlist = () => {
       </div>
 
       <a href="#form" className="mt-12">
-        <Button text="Join the Waitlist Today" />
+        <Button eventtype="itramei" text="Join the Waitlist Today" />
       </a>
     </section>
   );

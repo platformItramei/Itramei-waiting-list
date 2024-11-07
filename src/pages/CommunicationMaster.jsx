@@ -1,14 +1,30 @@
 import React from "react";
 import cyclePath from "../assets/images/itramei_cycle.svg";
+import itramei_watermark from "../../src/assets/images/Itramei_rot.svg"; 
 
 const CommunicationMaster = () => {
   return (
     <div
-      className="flex flex-col md:flex-row rounded-lg mx-auto w-full max-w-[1440px] items-center justify-between"
+      className="relative flex flex-col md:flex-row rounded-lg mx-auto w-full max-w-[1440px] items-center justify-between"
       id="about"
     >
       {/* Text Section */}
-      <div className="text-section md:w-1/2 px-6 md:px-20 py-10 md:py-20">
+      <div className="text-section md:w-1/2 px-6 md:px-20 py-10 md:py-20 relative">
+        {/* Watermark Image */}
+        <img
+          src={itramei_watermark}
+          alt="Watermark"
+          className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/4"
+          style={{
+            width: "458.84px",
+            height: "552.45px",
+            opacity: 20,
+            transform: "translate(-85%, -25%)",
+            zIndex: -1,
+          }}
+        />
+
+
         <h1
           className="font-bold text-center md:text-left text-4xl md:text-5xl leading-tight mb-6"
           style={{
@@ -62,6 +78,8 @@ const CommunicationMaster = () => {
             alt="Itramei Communication Process"
             className="w-full h-auto"
           />
+          <br />
+
         </div>
       </div>
     </div>

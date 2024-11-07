@@ -5,14 +5,14 @@ import styled, { css } from "styled-components";
 import { PlusJakartaSans } from "../shared_styles";
 
 // Icon
-import ArrowActive from "../../assets/icons/arrow-filled.svg";
+import ArrowActive from "../../assets/icons/ArrowIcon.svg";
 import ArrowInactive from "../../assets/icons/arrow-blank.svg";
 
 // Styled Components
 const FaqWrapper = styled.div`
   ${PlusJakartaSans};
   width: 100%;
-  max-height: 70px;
+  max-height: 80px;
   max-width: 810px;
   overflow: hidden;
   border-radius: 12px;
@@ -22,7 +22,7 @@ const FaqWrapper = styled.div`
   border: solid 1px rgba(233, 233, 231, 1);
 
   &:hover {
-    border: solid 1px rgba(36, 195, 255, 1);
+    border: solid 2px #E0EBEF;
   }
 
   ${({ $open }) =>
@@ -50,15 +50,14 @@ const QuestionContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 30px;
-
+  padding: 25px 35px;
   @media screen and (max-width: 768px) {
     padding: 10px;
   }
 `;
 
 const AnswerContainer = styled.div`
-  background-color: rgba(222, 246, 255, 1);
+  background-color: #E0EBEF;
   width: 100%;
   border-radius: 0 0 8px 8px;
   padding: 24px;
@@ -86,7 +85,6 @@ const Text = styled.p`
 export default function FAQ({ question, answer }) {
   const [open, setOpen] = useState(false);
   const toggleOpen = () => setOpen((prev) => !prev);
-
   return (
     <FaqWrapper $open={open}>
       <QuestionContainer onClick={toggleOpen}>
