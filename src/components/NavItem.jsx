@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { setForm } from "../redux/reducers/waiting_list_form";
 
-const NavItem = ({ text, href = "#", eventtype }) => {
+const NavItem = ({ text, href = "#", eventtype,menuid }) => {
   const dispatch = useDispatch(); 
 
   const handleFormChange = (eventtype) => {
@@ -10,7 +10,8 @@ const NavItem = ({ text, href = "#", eventtype }) => {
   };
 
   return (
-    <a
+    <a 
+      id={menuid}
       href={href}
       onClick={(e) => {
         handleFormChange(eventtype);

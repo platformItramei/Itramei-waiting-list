@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from "react-redux";
 import { setForm } from "../redux/reducers/waiting_list_form";
 
-const Button = ({ text,eventtype }) => {
+const Button = ({ text,eventtype,btnid }) => {
 
   const dispatch = useDispatch(); 
 
@@ -12,6 +12,7 @@ const Button = ({ text,eventtype }) => {
 
   return (
     <button
+     id={btnid}
      href="#form"
      onClick={(e) => {
        handleFormChange(eventtype);

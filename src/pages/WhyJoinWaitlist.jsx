@@ -68,7 +68,7 @@ const WhyJoinWaitlist = () => {
       </div>
 
       <a href="#form" className="mt-12">
-        <Button eventtype="itramei" text="Join the Waitlist Today" />
+        <Button btnid="waitlistbtn2"  eventtype="itramei" text="Join the Waitlist Today" />
       </a>
     </section>
   );

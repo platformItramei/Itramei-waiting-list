@@ -12,6 +12,7 @@ const WaitListButton = () => {
 
   return (
     <button
+      id="waitlistbtn"
       className="relative flex items-center overflow-hidden group text-[#1F2C38] font-semibold text-lg shadow-md transition-colors duration-1000"
       onClick={(e) => {
         handleFormChange("itramei");

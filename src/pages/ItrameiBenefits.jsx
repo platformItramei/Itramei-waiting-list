@@ -35,6 +35,7 @@ const ItrameiBenefits = () => {
 
           {/* For Businesses Button */}
           <button
+            id="business"
             onClick={() => setActiveTab("business")}
             className={`relative z-10 w-1/2 font-light flex items-center justify-center hover:text-white transition-colors duration-300 ease ${
               activeTab === "business" ? "text-white" : "text-gray-400"
@@ -48,6 +49,7 @@ const ItrameiBenefits = () => {
 
           {/* For Individuals Button */}
           <button
+            id="individual"
             onClick={() => setActiveTab("individual")}
             className={`relative z-10 w-1/2 font-light flex items-center justify-center hover:text-white transition-colors duration-300 ease ${
               activeTab === "individual" ? "text-white" : "text-gray-400"
@@ -105,7 +107,7 @@ const ItrameiBenefits = () => {
       {/* Register Button */}
       <div className="flex justify-center mt-10">
         <button
-        
+          id="invitation"
           className="text-white font-semibold text-base md:text-md px-4 py-2 rounded-lg bg-white bg-opacity-10 border border-gray-400"
           style={{ fontFamily: "Plus Jakarta Sans" }}
         >

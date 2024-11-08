@@ -34,21 +34,25 @@ const Navbar = () => {
 
       {/* Right Side - Links for Desktop */}
       <div className="hidden md:flex space-x-8">
-        <NavItem text="About" href="#about" eventtype="itramei"
+        <NavItem menuid="aboutlink" text="About" href="#about" eventtype="itramei"
             onClick={() => handleFormChange("itramei")} />
         <NavItem
+          menuid="waitlistlink"
           text="Itramei Waitlist"
           eventtype="itramei"
           href="#form"
         />
         <NavItem
+          menuid="launcheventlink"
           text="Launch Event Waitlist"
           href="#form"
           eventtype="launch"
         />
         <NavItem text="FAQ"  eventtype="itramei"
-            onClick={() => handleFormChange("itramei")} href="#faq" />
+                menuid="faqlink"
+                onClick={() => handleFormChange("itramei")} href="#faq" />
         <NavItem text="Contact" eventtype="itramei"
+            menuid="contactlink"
             onClick={() => handleFormChange("itramei")} href="#footer" />
       </div>
 
