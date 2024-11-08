@@ -21,9 +21,11 @@ const PageContainer = styled.div`
 
 export default function WaitingListForm() {
   return (
+    <div id="form">
     <PageContainer>
       <Title dark="Join the Future of" blue="Effective Communication" />
       <Forms />
     </PageContainer>
+    </div>
   );
 }

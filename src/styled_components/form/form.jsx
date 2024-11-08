@@ -45,6 +45,8 @@ export default function Forms() {
   const [showModal, setShowModal] = useState(false);
 
   const handleInputChange = (e) => {
+    console.log("test");
+    console.log(form);
     const { name, value } = e.target;
 
     if (name === "phone") {
@@ -66,31 +68,26 @@ export default function Forms() {
       : "Register for an exclusive invitation to the Dublin launch event";
 
       const handleSubmit = async (e, event) => {
-        e.preventDefault();
-        console.log("in handle submit");
-        console.log(event);        
-        
+        e.preventDefault();        
         // Handle validation of form
-        const isValid = handleValidate(dispatch, form);
-        console.log("isValid");
+        const isValid = handleValidate(dispatch, form,event);
+        console.log('isValid');
         console.log(isValid);
-        if (!isValid) return;
-    
-        console.log("handleValidate");
-    
+        if (!isValid) return;    
         let data = null;
     
         try {
             if (event === "waitinglist") {
                 data = {
-                  fullName: `${form.name} ${form.surname}`, // Concatenate directly here
+                  fullName: form.name, 
                   email: form.email,
                   consent: form.terms ? 1 : 0,
+                  event:event
                 };
             } else {
                 data = {
                     firstName: form.name,
-                    fullName: `${form.name} ${form.surname}`, // Concatenate directly here
+                    fullName: `${form.name} ${form.surname}`, 
                     lastName:form.surname,
                     email: form.email,
                     companyName: form.org,
@@ -125,8 +122,11 @@ export default function Forms() {
 
   return (
     <>
+        <div >
+        </div>
       {showModal && <SuccessModal onClick={() => setShowModal(false)} />}
-      <FormContainer id="form">
+      <div>
+      <FormContainer>
         <ToggleForm formType={formType} />
         <FormTitle>{formTitle}</FormTitle>
         {formType === "launch" && (
@@ -266,6 +266,8 @@ export default function Forms() {
         )}
         <Privacy />
       </FormContainer>
+      </div>
+
     </>
   );
 }

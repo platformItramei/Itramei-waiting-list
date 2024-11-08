@@ -10,19 +10,31 @@ const CommunicationMaster = () => {
     >
       {/* Text Section */}
       <div className="text-section md:w-1/2 px-6 md:px-20 py-10 md:py-20 relative">
+      
         {/* Watermark Image */}
         <img
-          src={itramei_watermark}
-          alt="Watermark"
-          className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/4"
-          style={{
-            width: "458.84px",
-            height: "552.45px",
-            opacity: 20,
-            transform: "translate(-85%, -25%)",
-            zIndex: -1,
-          }}
-        />
+  id="watermark"
+  src={itramei_watermark}
+  alt="Watermark"
+  className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/4"
+  style={{
+    width: "458.84px",
+    height: "552.45px",
+    opacity: 20, 
+    transform: "translate(-40%, -18%)",
+    zIndex: -1,
+  }}
+/>
+<style>
+  {`
+    /* Media query to apply styles for larger screens */
+    @media (min-width: 768px) { /* md breakpoint */
+      #watermark {
+        transform: translate(-64%, -28%); // For larger screens
+      }
+    }
+  `}
+</style>
 
 
         <h1

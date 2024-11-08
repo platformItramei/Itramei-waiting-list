@@ -13,8 +13,8 @@ const WhyJoinWaitlist = () => {
         style={{ color: "#2C3E50" }}
       >
         <span style={{ fontFamily: "Sansation" }}> Why Join the </span>{" "}
-        <span style={{ color: "#1B92BF" }}>Itramei</span>
-        <span style={{ fontFamily: "Sansation" }}> Waitlist? </span>
+        <span style={{ color: "#1B92BF" }}>Waitlist</span>
+        {/* <span style={{ fontFamily: "Sansation" }}>  </span> */}
       </h2>
 
       <div className="flex flex-col md:flex-row justify-between items-center mt-12 gap-10 w-full">
