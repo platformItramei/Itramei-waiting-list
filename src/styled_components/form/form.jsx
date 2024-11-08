@@ -45,8 +45,6 @@ export default function Forms() {
   const [showModal, setShowModal] = useState(false);
 
   const handleInputChange = (e) => {
-    console.log("test");
-    console.log(form);
     const { name, value } = e.target;
 
     if (name === "phone") {
@@ -71,8 +69,6 @@ export default function Forms() {
         e.preventDefault();        
         // Handle validation of form
         const isValid = handleValidate(dispatch, form,event);
-        console.log('isValid');
-        console.log(isValid);
         if (!isValid) return;    
         let data = null;
     
