@@ -1,6 +1,6 @@
 import axios from 'axios';
 const axiosInstance = axios.create({
-  baseURL: 'http://127.0.0.1:3000', 
+  baseURL: 'https://itramei-waiting-list-backend.vercel.app', 
   headers: {
     'Content-Type': 'application/json',
   },
