@@ -13,7 +13,7 @@ const WhyJoinWaitlist = () => {
         style={{ color: "#2C3E50" }}
       >
         <span style={{ fontFamily: "Sansation" }}> Why Join the </span>{" "}
-        <span style={{ color: "#1B92BF" }}>Waitlist</span>
+        <span style={{ color: "#1B92BF" }}>Waitlist</span>?
         {/* <span style={{ fontFamily: "Sansation" }}>  </span> */}
       </h2>
 
