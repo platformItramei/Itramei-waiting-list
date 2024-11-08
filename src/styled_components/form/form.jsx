@@ -106,12 +106,12 @@ export default function Forms() {
                 if (error.response.data.itramei_status_code === "USER_ALREADY_REGISTERED") {
                   dispatch(updateErrorField({ field: "email", message: "This email has already been used." }));
                 } else {
-                    console.error('Error response:', error.response.data);
+                    // console.error('Error response:', error.response.data);
                 }
             } else if (error.request) {
-                console.error('No response received:', error.request);
+                // console.error('No response received:', error.request);
             } else {
-                console.error('Error setting up request:', error.message);
+                // console.error('Error setting up request:', error.message);
             }
         }
     };
