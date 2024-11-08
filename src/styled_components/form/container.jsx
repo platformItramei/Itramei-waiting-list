@@ -11,7 +11,7 @@ const PageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 48px;
+  gap: 20px;
   padding: 80px 20px;
 
   @media screen and (max-width: 768px) {

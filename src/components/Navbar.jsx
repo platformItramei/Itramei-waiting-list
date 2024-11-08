@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import NavItem from "./NavItem";
-
-
-//redux
 import { useDispatch } from "react-redux";
 import { setForm } from "../redux/reducers/waiting_list_form";
 
@@ -87,11 +84,13 @@ const Navbar = () => {
           <NavItem
             text="Itramei Waitlist"
             href="#form"
+            eventtype="itramei"
             onClick={() => handleFormChange("itramei")}
           />
           <NavItem
             text="Launch Event Waitlist"
             href="#form"
+            eventtype="launch"
             onClick={() => handleFormChange("launch")}
           />
           <NavItem text="FAQ" href="#faq" />
