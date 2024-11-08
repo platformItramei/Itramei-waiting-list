@@ -38,7 +38,7 @@ export default function Footer() {
       {isMobile && (
         <LinkList>
           <Logo src={LogoIcon} />
-          <Link href="#about">About Us</Link>
+          <Link href="#about">About</Link>
           <Link href="#form" onClick={() => handleClick("itramei")}>
             Itramei Waitlist
           </Link>
@@ -65,19 +65,22 @@ export default function Footer() {
             info@itramei.com
           </Link>
           <Link $email href="maialto:investment@itramei.com">
-            investment@itramei.com
+           investment@itramei.com
+          </Link>
+          <Link $email href="maialto:investment@itramei.com">
+             {/* investment@itramei.com */}
           </Link>
         </EmailList>
       </Row>
       {!isMobile && (
         <LinkList>
           <Logo src={LogoIcon} />
-          <Link href="#about">About Us</Link>
+          <Link href="#about">About</Link>
           <Link href="#form" onClick={() => handleClick("itramei")}>
             Itramei Waitlist
           </Link>
           <Link href="#form" onClick={() => handleClick("launch")}>
-            Event Waitlist
+            Launch Event Waitlist
           </Link>
           <Link href="#faq">FAQ</Link>
         </LinkList>

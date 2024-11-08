@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import NavItem from "./NavItem";
-
-//redux
 import { useDispatch } from "react-redux";
 import { setForm } from "../redux/reducers/waiting_list_form";
 
@@ -13,7 +11,8 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleFormChange = (type) => {
+  const handleFormChange = (type,event) => {
+    event.preventDefault(); 
     dispatch(setForm(type));
   };
 
@@ -35,19 +34,26 @@ const Navbar = () => {
 
       {/* Right Side - Links for Desktop */}
       <div className="hidden md:flex space-x-8">
-        <NavItem text="About" href="#about" />
+        <NavItem menuid="aboutlink" text="About" href="#about" eventtype="itramei"
+            onClick={() => handleFormChange("itramei")} />
         <NavItem
+          menuid="waitlistlink"
           text="Itramei Waitlist"
+          eventtype="itramei"
           href="#form"
-          onClick={() => handleFormChange("itramei")}
         />
         <NavItem
+          menuid="launcheventlink"
           text="Launch Event Waitlist"
           href="#form"
-          onClick={() => handleFormChange("launch")}
+          eventtype="launch"
         />
-        <NavItem text="FAQ" href="#faq" />
-        <NavItem text="Contact" href="#footer" />
+        <NavItem text="FAQ"  eventtype="itramei"
+                menuid="faqlink"
+                onClick={() => handleFormChange("itramei")} href="#faq" />
+        <NavItem text="Contact" eventtype="itramei"
+            menuid="contactlink"
+            onClick={() => handleFormChange("itramei")} href="#footer" />
       </div>
 
       {/* Mobile Menu */}
@@ -81,19 +87,24 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="flex flex-col space-y-6 mt-16">
-          <NavItem text="About" href="#about" />
+          <NavItem text="About" eventtype="itramei"
+            onClick={() => handleFormChange("itramei")} href="#about" />
           <NavItem
             text="Itramei Waitlist"
             href="#form"
+            eventtype="itramei"
             onClick={() => handleFormChange("itramei")}
           />
           <NavItem
             text="Launch Event Waitlist"
             href="#form"
+            eventtype="launch"
             onClick={() => handleFormChange("launch")}
           />
-          <NavItem text="FAQ" href="#faq" />
-          <NavItem text="Contact" href="#footer" />
+          <NavItem text="FAQ"  href="#faq" eventtype="itramei"
+            onClick={() => handleFormChange("itramei")} />
+          <NavItem text="Contact" eventtype="itramei"
+            onClick={() => handleFormChange("itramei")} href="#footer" />
         </div>
       </div>
     </div>

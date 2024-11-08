@@ -10,7 +10,7 @@ const BenefitCard = ({ icon, text, altText }) => {
     >
       <img src={icon} alt={altText} className="w-16 h-16" />
       <p
-        className="font-medium text-[20px] leading-[24px] text-white"
+        className="font-medium text-[16px] leading-[24px] text-white"
         style={{
           fontFamily: 'Plus Jakarta Sans',
         }}

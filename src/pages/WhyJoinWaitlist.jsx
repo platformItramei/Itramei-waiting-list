@@ -13,8 +13,8 @@ const WhyJoinWaitlist = () => {
         style={{ color: "#2C3E50" }}
       >
         <span style={{ fontFamily: "Sansation" }}> Why Join the </span>{" "}
-        <span style={{ color: "#1B92BF" }}>Itramei</span>
-        <span style={{ fontFamily: "Sansation" }}> Waitlist? </span>
+        <span style={{ color: "#1B92BF" }}>Waitlist</span>?
+        {/* <span style={{ fontFamily: "Sansation" }}>  </span> */}
       </h2>
 
       <div className="flex flex-col md:flex-row justify-between items-center mt-12 gap-10 w-full">
@@ -49,7 +49,7 @@ const WhyJoinWaitlist = () => {
                 top: "0",
                 right: "0",
                 width: "60%",
-                transform: "translate(30%, -40%)",
+                transform: "translate(30%, -10%)",
               }}
             />
             <img
@@ -60,7 +60,7 @@ const WhyJoinWaitlist = () => {
                 bottom: "0",
                 left: "0",
                 width: "85%",
-                transform: "translate(-17%, -43%)",
+                transform: "translate(-6%, -20%)",
               }}
             />
           </div>
@@ -68,7 +68,7 @@ const WhyJoinWaitlist = () => {
       </div>
 
       <a href="#form" className="mt-12">
-        <Button text="Join the Waitlist Today" />
+        <Button btnid="waitlistbtn2"  eventtype="itramei" text="Join the Waitlist Today" />
       </a>
     </section>
   );

@@ -10,7 +10,7 @@ const initialState = {
 
   //Launch Event Waitinglist
   surname: "",
-  phone: "+",
+  phone: "+353",
   org: "",
   title: "",
   terms: false,

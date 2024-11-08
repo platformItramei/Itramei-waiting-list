@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axiosInstance from '../../services/axiosInstance';
+import { updateErrorField } from "../../redux/reducers/waiting_list_form";
 
 //Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -33,9 +35,6 @@ import {
 } from "../reusable/inputs";
 import SuccessModal from "./successModal";
 
-//API
-import axios from "axios";
-
 export default function Forms() {
   const dispatch = useDispatch();
   const form = useSelector((state) => state.form);
@@ -66,29 +65,64 @@ export default function Forms() {
       ? "Be one of the First to Gain Insight & Access"
       : "Register for an exclusive invitation to the Dublin launch event";
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    //Handles validation of form
-    const isValid = handleValidate(dispatch, form);
-    if (!isValid) return;
-
-    //Handle sumbitting of form here
-    //Axios is installed
-    //POST is all needed
-
-    //access keys by using the form variable i.e form.name, form.surname, form.emai. etc...
-    //state slice / container you can find in redux/waiting_list_form.js
-
-    dispatch(resetState());
-    setLoading(false);
-  };
+      const handleSubmit = async (e, event) => {
+        e.preventDefault();        
+        // Handle validation of form
+        const isValid = handleValidate(dispatch, form,event);
+        if (!isValid) return;    
+        let data = null;
+    
+        try {
+            if (event === "waitinglist") {
+                data = {
+                  fullName: form.name, 
+                  email: form.email,
+                  consent: form.terms ? 1 : 0,
+                  event:event
+                };
+            } else {
+                data = {
+                    firstName: form.name,
+                    fullName: `${form.name} ${form.surname}`, 
+                    lastName:form.surname,
+                    email: form.email,
+                    companyName: form.org,
+                    position: form.title,
+                    event: event,
+                    phoneNumber: form.phone,
+                    consent: form.terms ? 1 : 0,
+                };
+            }
+            
+            const response = await axiosInstance.post('/itramei/api/save', data);
+    
+            if (response.status === 201) {
+                setSubmitted(true);
+                setShowModal(true);
+                dispatch(resetState());
+            }
+        } catch (error) {
+            if (error.response) {
+                if (error.response.data.itramei_status_code === "USER_ALREADY_REGISTERED") {
+                  dispatch(updateErrorField({ field: "email", message: "This email has already been used." }));
+                } else {
+                    // console.error('Error response:', error.response.data);
+                }
+            } else if (error.request) {
+                // console.error('No response received:', error.request);
+            } else {
+                // console.error('Error setting up request:', error.message);
+            }
+        }
+    };
 
   return (
     <>
+        <div >
+        </div>
       {showModal && <SuccessModal onClick={() => setShowModal(false)} />}
-      <FormContainer id="form">
+      <div>
+      <FormContainer>
         <ToggleForm formType={formType} />
         <FormTitle>{formTitle}</FormTitle>
         {formType === "launch" && (
@@ -97,13 +131,14 @@ export default function Forms() {
           </SubTitle>
         )}
         {formType === "itramei" && (
-          <Form onSubmit={handleSubmit}>
+        <Form onSubmit={(e) => handleSubmit(e, "waitinglist")}>
             <InputWrapper>
-              <Label htmlFor="name">First Name</Label>
+              <Label htmlFor="name">Full Name</Label>
               <Input
                 value={form.name}
                 name="name"
                 id="name"
+                placeholder=""
                 onChange={handleInputChange}
               />
               {form.error.name && <Error>{form.error.name}</Error>}
@@ -138,7 +173,7 @@ export default function Forms() {
           </Form>
         )}
         {formType === "launch" && (
-          <Form $launchList onSubmit={handleSubmit}>
+          <Form $launchList onSubmit={(e) => handleSubmit(e, "launch-waitlist")}>
             <InputWrapper>
               <Label htmlFor="name">First Name</Label>
               <Input
@@ -188,7 +223,7 @@ export default function Forms() {
                 onChange={handleInputChange}
                 name="org"
                 id="org"
-                placeholder="Enter your company name"
+                placeholder=""
               />
               {form.error.org && <Error>{form.error.org}</Error>}
             </InputWrapper>
@@ -199,7 +234,7 @@ export default function Forms() {
                 onChange={handleInputChange}
                 name="title"
                 id="title"
-                placeholder="Manager at Itramei"
+                placeholder=""
               />
               {form.error.title && <Error>{form.error.title}</Error>}
             </InputWrapper>
@@ -227,6 +262,8 @@ export default function Forms() {
         )}
         <Privacy />
       </FormContainer>
+      </div>
+
     </>
   );
 }

@@ -1,10 +1,9 @@
 import { updateErrorField } from "../../redux/reducers/waiting_list_form";
 import bannedWordsData from "./bannedWords.json";
 
-export const handleValidate = (dispatch, form) => {
+export const handleValidate = (dispatch, form, event) => {
   let valid = true;
   const bannedWords = bannedWordsData.bannedWords;
-
   const emptyError = "This can't be empty!";
   const termsError = "You must agree to the terms and conditions!";
   const emailError = "Must be a valid email!";
@@ -33,13 +32,16 @@ export const handleValidate = (dispatch, form) => {
   }
 
   // Surname
+  if(event=="launch")
+  {
   if (!form.surname) {
     dispatch(updateErrorField({ field: "surname", message: emptyError }));
     valid = false;
   } else if (containsBannedWords(form.surname)) {
     dispatch(updateErrorField({ field: "surname", message: abusiveError }));
     valid = false;
-  } else if (form.surname.length < 3) {
+
+  } else if (form.surname.length < 3 ) {
     dispatch(updateErrorField({ field: "surname", message: lengthError }));
   } else {
     dispatch(updateErrorField({ field: "surname", message: "" }));
@@ -49,12 +51,15 @@ export const handleValidate = (dispatch, form) => {
   if (!form.email) {
     dispatch(updateErrorField({ field: "email", message: emptyError }));
     valid = false;
+
   } else if (
     !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email)
   ) {
     dispatch(updateErrorField({ field: "email", message: emailError }));
     valid = false;
+
   } else {
+    
     dispatch(updateErrorField({ field: "email", message: "" }));
   }
 
@@ -63,12 +68,10 @@ export const handleValidate = (dispatch, form) => {
     dispatch(updateErrorField({ field: "phone", message: emptyError }));
     valid = false;
   } else if (!/^\+[0-9]{7,15}$/.test(form.phone)) {
-    // Require '+' at the start, followed by 7-15 digits
-    // Allows optional '+' and 7-15 digits
     dispatch(
       updateErrorField({
         field: "phone",
-        message: "Invalid number format. Dont forget your land code",
+        message: "Invalid number format. Dont forget your country code",
       })
     );
     valid = false;
@@ -101,6 +104,7 @@ export const handleValidate = (dispatch, form) => {
   } else {
     dispatch(updateErrorField({ field: "title", message: "" }));
   }
+}
 
   // Terms
   if (!form.terms) {
