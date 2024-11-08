@@ -5,36 +5,12 @@ import itramei_watermark from "../../src/assets/images/Itramei_rot.svg";
 const CommunicationMaster = () => {
   return (
     <div
-      className="relative flex flex-col md:flex-row rounded-lg mx-auto w-full max-w-[1440px] items-center justify-between"
+      className="relative overflow-hidden flex flex-col md:flex-row rounded-lg mx-auto w-full max-w-full items-center justify-between"
       id="about"
     >
       {/* Text Section */}
       <div className="text-section md:w-1/2 px-6 md:px-20 py-10 md:py-20 relative">
-      
         {/* Watermark Image */}
-        <img
-  id="watermark"
-  src={itramei_watermark}
-  alt="Watermark"
-  className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/4"
-  style={{
-    width: "458.84px",
-    height: "552.45px",
-    opacity: 20, 
-    transform: "translate(-40%, -18%)",
-    zIndex: -1,
-  }}
-/>
-<style>
-  {`
-    /* Media query to apply styles for larger screens */
-    @media (min-width: 768px) { /* md breakpoint */
-      #watermark {
-        transform: translate(-64%, -28%); // For larger screens
-      }
-    }
-  `}
-</style>
 
 
         <h1
@@ -91,7 +67,6 @@ const CommunicationMaster = () => {
             className="w-full h-auto"
           />
           <br />
-
         </div>
       </div>
     </div>
