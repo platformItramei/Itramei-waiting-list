@@ -58,17 +58,17 @@ export default function Footer() {
           <Link $border $email href="mailto:presale@itramei.com">
             presales@itramei.com
           </Link>
-          <Link $border $email href="mailtp:press@itramei.com">
+          <Link $border $email href="mailto:press@itramei.com">
             press@itramei.com
           </Link>
           <Link $border $email href="mailto:info@itramei.com">
             info@itramei.com
           </Link>
-          <Link $email href="maialto:investment@itramei.com">
-           investment@itramei.com
+          <Link $email href="mailto:investment@itramei.com">
+            investment@itramei.com
           </Link>
           <Link $email href="maialto:investment@itramei.com">
-             {/* investment@itramei.com */}
+            {/* investment@itramei.com */}
           </Link>
         </EmailList>
       </Row>
