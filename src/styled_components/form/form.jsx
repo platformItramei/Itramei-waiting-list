@@ -74,16 +74,20 @@ export default function Forms() {
     
         try {
             if (event === "waitinglist") {
+              const nameParts= form.name.trim().split(" ");
                 data = {
-                  fullName: form.name, 
+                  fullName: form.name,
+                  firstName:nameParts[0],
                   email: form.email,
                   consent: form.terms ? 1 : 0,
                   event:event
                 };
+
             } else {
+              let firstname=form.name.trim().split(" ")[0];
                 data = {
-                    firstName: form.name,
-                    fullName: `${form.name} ${form.surname}`, 
+                    firstName: firstname,
+                    fullName: `${firstname} ${form.surname}`, 
                     lastName:form.surname,
                     email: form.email,
                     companyName: form.org,
@@ -93,7 +97,6 @@ export default function Forms() {
                     consent: form.terms ? 1 : 0,
                 };
             }
-            
             const response = await axiosInstance.post('/itramei/api/save', data);
     
             if (response.status === 201) {
@@ -148,6 +151,7 @@ export default function Forms() {
               <Input
                 value={form.email}
                 name="email"
+                onKeyDown={(e) => e.key === " " && e.preventDefault()}
                 id="email"
                 onChange={handleInputChange}
                 placeholder="you@company.com"
@@ -177,10 +181,12 @@ export default function Forms() {
             <InputWrapper>
               <Label htmlFor="name">First Name</Label>
               <Input
-                value={form.name}
+                value={form.name.trim().split(" ")[0]}
+                onKeyDown={(e) => e.key === " " && e.preventDefault()}
                 onChange={handleInputChange}
                 name="name"
                 id="name"
+                
               />
               {form.error.name && <Error>{form.error.name}</Error>}
             </InputWrapper>
@@ -188,6 +194,7 @@ export default function Forms() {
               <Label>Last Name</Label>
               <Input
                 value={form.surname}
+                onKeyDown={(e) => e.key === " " && e.preventDefault()}
                 onChange={handleInputChange}
                 name="surname"
                 id="surname"
@@ -198,6 +205,7 @@ export default function Forms() {
               <Label htmlFor="email">Email</Label>
               <Input
                 value={form.email}
+                onKeyDown={(e) => e.key === " " && e.preventDefault()}
                 onChange={handleInputChange}
                 name="email"
                 id="email"

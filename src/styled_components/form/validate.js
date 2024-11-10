@@ -31,8 +31,24 @@ export const handleValidate = (dispatch, form, event) => {
     dispatch(updateErrorField({ field: "name", message: "" }));
   }
 
+    // Email
+    if (!form.email) {
+      dispatch(updateErrorField({ field: "email", message: emptyError }));
+      valid = false;
+  
+    } else if (
+      !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email)
+    ) {
+      dispatch(updateErrorField({ field: "email", message: emailError }));
+      valid = false;
+  
+    } else {
+      
+      dispatch(updateErrorField({ field: "email", message: "" }));
+    }
+
   // Surname
-  if(event=="launch")
+  if(event=="launch-waitlist")
   {
   if (!form.surname) {
     dispatch(updateErrorField({ field: "surname", message: emptyError }));
@@ -45,22 +61,6 @@ export const handleValidate = (dispatch, form, event) => {
     dispatch(updateErrorField({ field: "surname", message: lengthError }));
   } else {
     dispatch(updateErrorField({ field: "surname", message: "" }));
-  }
-
-  // Email
-  if (!form.email) {
-    dispatch(updateErrorField({ field: "email", message: emptyError }));
-    valid = false;
-
-  } else if (
-    !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email)
-  ) {
-    dispatch(updateErrorField({ field: "email", message: emailError }));
-    valid = false;
-
-  } else {
-    
-    dispatch(updateErrorField({ field: "email", message: "" }));
   }
 
   // Phone
