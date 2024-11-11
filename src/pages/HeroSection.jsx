@@ -1,9 +1,16 @@
 import React, { useRef, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
+
+//Other
 import backgroundVideo from "../assets/videos/bg.mp4";
 import WaitButton from "../components/WaitButton";
 
+//PNGs
+import button from "../assets/icons/button.png";
+
 const HeroSection = () => {
   const videoRef = useRef(null);
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   useEffect(() => {
     if (videoRef.current) {
@@ -38,7 +45,17 @@ const HeroSection = () => {
         </p>
 
         <div className="mt-8">
-          <WaitButton />
+          {isMobile ? (
+            <a href="#form">
+              <img
+                src={button}
+                alt="wait list button"
+                style={{ width: "100%", height: "50px" }}
+              />
+            </a>
+          ) : (
+            <WaitButton />
+          )}
         </div>
       </div>
     </div>

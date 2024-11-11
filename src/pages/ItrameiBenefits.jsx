@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useMediaQuery } from "react-responsive";
+
+//Desktop SVGs
 import scale from "../assets/icons/BussinessIcon1.svg";
 import excel from "../assets/icons/BussinessIcon2.svg";
 import empower from "../assets/icons/BussinessIcon3.svg";
@@ -6,15 +9,27 @@ import BenefitCard from "../components/BenefitCard";
 import increase from "../assets/icons/Individual1.svg";
 import strength from "../assets/icons/Individual2.svg";
 import boost from "../assets/icons/Individual3.svg";
+
+//import Mobile PNGs
+import scaleM from "../assets/icons/scale.png";
+import excelM from "../assets/icons/excelM.png";
+import empowerM from "../assets/icons/empower.png";
+import increaseM from "../assets/icons/confidence.png";
+import strengthM from "../assets/icons/strengthM.png";
+import boostM from "../assets/icons/boostM.png";
+
+//Redux
 import { useDispatch } from "react-redux";
 import { setForm } from "../redux/reducers/waiting_list_form";
 
 const ItrameiBenefits = () => {
   const [activeTab, setActiveTab] = useState("business");
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
+
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const handleFormChange = (eventtype) => {
-    dispatch(setForm(eventtype)); 
+    dispatch(setForm(eventtype));
   };
   return (
     <div className="w-full mx-auto bg-[#0D4459] py-20 px-4 md:px-10 overflow-x-hidden">
@@ -68,17 +83,17 @@ const ItrameiBenefits = () => {
         {activeTab === "business" ? (
           <>
             <BenefitCard
-              icon={excel}
+              icon={isMobile ? excelM : excel}
               text="Excel through improved employee performance and brand protection."
               altText="Excel Icon"
             />
             <BenefitCard
-              icon={empower}
+              icon={isMobile ? empowerM : empower}
               text="Empower your hiring of young talent without compromising quality."
               altText="Empower Icon"
             />
             <BenefitCard
-              icon={scale}
+              icon={isMobile ? scaleM : scale}
               text="Scale confidently while upholding high standards."
               altText="Scale Icon"
             />
@@ -86,17 +101,17 @@ const ItrameiBenefits = () => {
         ) : (
           <>
             <BenefitCard
-              icon={increase}
+              icon={isMobile ? increaseM : increase}
               text="Increase confidence in social interactions"
               altText="Increase Icon"
             />
             <BenefitCard
-              icon={strength}
+              icon={isMobile ? strengthM : strength}
               text="Strengthening of interpersonal relationships."
               altText="Strength Icon"
             />
             <BenefitCard
-              icon={boost}
+              icon={isMobile ? boostM : boost}
               text="Boost career growth."
               altText="Boost Icon"
             />
@@ -111,17 +126,16 @@ const ItrameiBenefits = () => {
           className="text-white font-semibold text-base md:text-md px-4 py-2 rounded-lg bg-white bg-opacity-10 border border-gray-400"
           style={{ fontFamily: "Plus Jakarta Sans" }}
         >
-          <a href="#form" onClick={(e) => {
-            if(activeTab==="business")
-            {
-              handleFormChange("launch")
-            }
-            else
-            {
-              handleFormChange("itramei")
-            }
-           }}>
-            
+          <a
+            href="#form"
+            onClick={(e) => {
+              if (activeTab === "business") {
+                handleFormChange("launch");
+              } else {
+                handleFormChange("itramei");
+              }
+            }}
+          >
             {activeTab === "business"
               ? "Register for Exclusive Invitation"
               : "Signup for Itramei Waitlist"}

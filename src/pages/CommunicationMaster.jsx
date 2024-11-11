@@ -1,8 +1,16 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
+
+//Desktop SVGs
 import cyclePath from "../assets/images/itramei_cycle.svg";
-import itramei_watermark from "../../src/assets/images/Itramei_rot.svg"; 
+import itramei_watermark from "../../src/assets/images/Itramei_rot.svg";
+
+//Mobile PNGs
+import rotM from "../../src/assets/icons/rotM.png";
 
 const CommunicationMaster = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
   return (
     <div
       className="relative overflow-hidden flex flex-col md:flex-row rounded-lg mx-auto w-full max-w-full items-center justify-between"
@@ -11,7 +19,6 @@ const CommunicationMaster = () => {
       {/* Text Section */}
       <div className="text-section md:w-1/2 px-6 md:px-20 py-10 md:py-20 relative">
         {/* Watermark Image */}
-
 
         <h1
           className="font-bold text-center md:text-left text-4xl md:text-5xl leading-tight mb-6"
@@ -62,7 +69,7 @@ const CommunicationMaster = () => {
         {/* Wrapped the image in a container with max-width */}
         <div className="w-full max-w-md">
           <img
-            src={cyclePath}
+            src={isMobile ? rotM : cyclePath}
             alt="Itramei Communication Process"
             className="w-full h-auto"
           />
