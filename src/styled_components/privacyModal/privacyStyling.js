@@ -4,7 +4,7 @@ import { PlusJakartaSans, Sansation } from "../shared_styles";
 //Containers
 export const ModalContainer = styled.div`
   ${PlusJakartaSans};
-  z-index: 999;
+  z-index: 998;
   position: fixed;
   top: 0;
   bottom: 0;

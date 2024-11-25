@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { PlusJakartaSans } from "../shared_styles";
 
-//Redux
+// Redux
 import { useDispatch } from "react-redux";
 import { toggleTerms, togglePrivacy } from "../../redux/reducers/modals";
 
@@ -11,15 +11,15 @@ const PrivacyContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 16px;
+  gap: ${(props) => (props.isModal ? "10px" : "16px")};
 `;
 
 const Message = styled.p`
   color: rgba(41, 58, 75, 1);
   font-weight: 500;
-  font-size: 14px;
+  font-size: ${(props) => (props.isModal ? "10px" : "12px")};
   @media screen and (max-width: 768px) {
-    font-size: 12px;
+    font-size: ${(props) => (props.isModal ? "10px" : "12px")};
     margin-top: -6px;
   }
 `;
@@ -28,12 +28,12 @@ const LinkContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: ${(props) => (props.isModal ? "11px" : "18px")};
 `;
 
 const PrivacyLink = styled.p`
   color: rgba(29, 156, 204, 1);
-  font-size: 14px;
+  font-size: ${(props) => (props.isModal ? "10px" : "12px")};
   font-weight: 600;
   line-height: 20px;
   cursor: pointer;
@@ -49,13 +49,13 @@ const PrivacyLink = styled.p`
     `}
 
   @media screen and (max-width: 768px) {
-    font-size: 12px;
+    font-size: ${(props) => (props.isModal ? "10px" : "12px")};
   }
 `;
 
 const ContactUs = styled.a`
   color: rgba(29, 156, 204, 1);
-  font-size: 14px;
+  font-size: ${(props) => (props.isModal ? "10px" : "12px")};
   font-weight: 600;
   line-height: 20px;
   cursor: pointer;
@@ -71,26 +71,31 @@ const ContactUs = styled.a`
     `}
 
   @media screen and (max-width: 768px) {
-    font-size: 12px;
+    font-size: ${(props) => (props.isModal ? "10px" : "12px")};
   }
 `;
 
-export default function Privacy() {
+export default function Privacy({ isModal }) { // Correctly destructured
   const dispatch = useDispatch();
   const showTerms = () => dispatch(toggleTerms());
   const showPrivacy = () => dispatch(togglePrivacy());
   return (
-    <PrivacyContainer>
-      <Message>
+    <PrivacyContainer isModal={isModal}>
+      <Message isModal={isModal}>
         Your privacy is important to us. We will never share your information
       </Message>
-      <LinkContainer>
-        <PrivacyLink onClick={showPrivacy}>Privacy</PrivacyLink>
-        <PrivacyLink $border onClick={showTerms}>
+      <LinkContainer isModal={isModal}>
+        <PrivacyLink isModal={isModal} onClick={showPrivacy}>
+          Privacy
+        </PrivacyLink>
+        <PrivacyLink isModal={isModal} $border onClick={showTerms}>
           Terms of Service
         </PrivacyLink>
-        <ContactUs href="#footer">Contact Us</ContactUs>
+        <ContactUs isModal={isModal} href="#footer">
+          Contact Us
+        </ContactUs>
       </LinkContainer>
     </PrivacyContainer>
   );
 }
+
