@@ -67,7 +67,7 @@ export default function Forms({ isModal = false, onClose }) {
   const formTitle =
     formType === "itramei"
       ? "Be one of the First to Gain Insight & Access"
-      : "Exclusive invitation to the Dublin launch event";
+      : "Exclusive Invitation to the Dublin Launch Event 2025";
 
   const handleSubmit = async (e, event) => {
     e.preventDefault();
